@@ -1,0 +1,110 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --background: #E4EFF3;
+    --font: 'Open Sans', sans-serif;
+    --color-font: black;
+    --color-font2: #1f2464;
+    --box-timer: #3d428c60;
+    --box-timer-active: #3d428c2d;
+}
+
+body {
+    background-color: var(--background);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font);
+}
+
+a {
+    list-style: none;
+    text-decoration: none;
+    color: var(--color-font);
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 98vh;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.header a {
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    margin: 15px;
+}
+
+.header p {
+    font-size: 1.1em;
+    color: var(--color-font2);
+    font-weight: bold;
+    opacity: 0.6;
+    margin: 10px;
+}
+
+.sign-box {
+    background-color: var(--box-timer);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px;
+    min-width: 400px;
+}
+
+.sign-box span {
+    display: block;
+    color: var(--color-font2);
+    font-weight: 600;
+    font-size: 0.8em;
+    opacity: 0.6;
+    margin: 0px 0px 5px;
+    text-transform: uppercase;
+}
+
+.sign-box__email, .sign-box__password, .sign-box__user {
+    margin: 0px 0px 20px;
+}
+
+#sign__email, #sign__pwd, #sign__user {
+    padding: 8px 10px;
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: none;
+    font-size: 1.2em;
+    color: rgb(85, 85, 85);
+    background-color: var(--background);
+    border: none;
+}
+
+.sign-box__options {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#sign__button {
+    box-shadow: none;
+    border: none;
+    background: rgb(34, 34, 34);
+    color: white;
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    min-width: 250px;
+}
