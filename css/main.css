@@ -1,0 +1,199 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --background: #E4EFF3;
+    --font: 'Open Sans', sans-serif;
+    --color-font: black;
+    --color-font2: white;
+    --start-button: #4a85ec;
+    --stop-button: #ec5252;
+    --box-timer: #3d428c7e;
+    --box-timer-active: #3d428c2d;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: var(--font);
+}
+
+body {
+    background-image: url('../images/background.jpg');
+    background-repeat: no-repeat;
+    background-position: center center; 
+    background-attachment: fixed;
+    background-size: 100%;
+    backdrop-filter: blur(5px);
+    height: 99vh;
+}
+
+a, li {
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    color: var(--color-font);
+}
+
+.header__menu {
+    display: flex;
+    justify-content: space-around;
+    margin: 5px 0px;
+    align-items: center;
+    color: var(--color-font);
+}
+
+.menu__logo a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu__logo img {
+    width: 35px;
+    margin-right: 5px;
+}
+
+#menu__home {
+    align-items: center;
+    padding: 10px;
+}
+
+.menu__nav {
+    display: flex;
+    align-items: center;
+}
+
+.menu__nav--opts {
+    display: flex;
+}
+
+.menu__nav--opts > li {
+    margin: 0px 20px;
+}
+
+.menu__links {
+    padding: 10px;
+    font-weight: bold;
+}
+
+.menu__links > img {
+    max-width: 25px;
+    margin: 0px 5px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 84vh;
+}
+
+.pomodoro {
+    min-width: 600px;
+    background-color: var(--box-timer);
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 40px 30px;
+}
+
+.pomodoro__modes {
+    margin: 10px 0px 0px;
+}
+
+.pomodoro__modes > button {
+    border: none;
+    margin: 0px 15px;
+    background: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    padding: 5px 10px;
+    color: var(--color-font);
+    font-weight: 300;
+}
+
+.pomodoro__modes > button:focus {
+    background-color: var(--box-timer-active);
+}
+
+.pomodoro__timer {
+    font-size: 10em;
+    font-weight: 900;
+    margin-bottom: 20px;
+    color: var(--color-font2);
+}
+
+.pomodoro__buttons {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 62.5%;
+}
+
+.pomodoro__buttons > button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0px 4px 2px 0px #00000033;
+    font-size: 2em;
+    text-transform: uppercase;
+    width: 200px;
+    padding: 10px;
+    color: var(--color-font2);
+    font-weight: 300;
+}
+
+.pomodoro__buttons > button:hover {
+    opacity: 0.9;
+}
+
+#button__start {
+    background-color: var(--start-button);
+}
+
+#button__stop {
+    background-color: var(--stop-button);
+}
+.pomodoro__pokebola > img{
+    width: 90px;
+    margin: 0px 10px;
+}
+
+.aside {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.themes {
+    margin-top: -80px;
+    margin-right: 120px;
+    display: flex;
+    align-items: center;
+}
+
+.themes__format {
+    margin: 0px 10px;
+    height: 100px;
+    width: 40px;
+    border-radius: 30px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: #020202be;
+}
+
+.themes__input {
+    margin: 8px 5px;
+    min-width: 28px;
+    min-height: 28px;
+    border-radius: 50%;
+    background-color: var(--background);
+}
