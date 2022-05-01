@@ -8,8 +8,8 @@
     --color-font2: white;
     --start-button: #4a85ec;
     --stop-button: #ec5252;
-    --box-timer: #3d428c7e;
-    --box-timer-active: #3d428c2d;
+    --box-timer: #1616167e;
+    --box-timer-active: #1616167e;
 }
 
 * {
@@ -24,17 +24,21 @@ body {
     background-repeat: no-repeat;
     background-position: center center; 
     background-attachment: fixed;
-    background-size: 100%;
+    background-size: 100% 100%;
     backdrop-filter: blur(5px);
     height: 99vh;
+    position: relative;
 }
 
 a, li {
     text-decoration: none;
     list-style: none;
-    display: flex;
-    align-items: center;
     color: var(--color-font);
+}
+
+.settings {
+    position: absolute;
+    display: none;
 }
 
 .header__menu {
@@ -59,6 +63,7 @@ a, li {
 #menu__home {
     align-items: center;
     padding: 10px;
+    color: var(--color-font2);
 }
 
 .menu__nav {
@@ -68,20 +73,29 @@ a, li {
 
 .menu__nav--opts {
     display: flex;
-}
-
-.menu__nav--opts > li {
-    margin: 0px 20px;
+    align-items: center;
 }
 
 .menu__links {
-    padding: 10px;
+    display: flex;
+    align-items: center;
     font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.185);
+    padding: 5px 10px 5px 10px;
+    margin: 10px;
+    border-radius: 5px;
+    color: var(--color-font2);
+    box-shadow:  3px 3px 4px 0px #00000047;
+}
+
+.menu__links:hover {
+    box-shadow: inset -1px -1px 2px 2px #00000021;
+    transform: translateX(2px) translateY(2px);
 }
 
 .menu__links > img {
-    max-width: 25px;
-    margin: 0px 5px;
+    max-width: 20px;
+    margin-right: 10px;
 }
 
 .container {
@@ -100,6 +114,7 @@ a, li {
     align-items: center;
     justify-content: center;
     padding: 30px 40px 30px;
+    position: relative;
 }
 
 .pomodoro__modes {
@@ -108,14 +123,14 @@ a, li {
 
 .pomodoro__modes > button {
     border: none;
-    margin: 0px 15px;
+    margin: 0px 30px;
     background: none;
     cursor: pointer;
     border-radius: 5px;
     font-size: 1.1em;
     font-weight: bold;
     padding: 5px 10px;
-    color: var(--color-font);
+    color: var(--color-font2);
     font-weight: 300;
 }
 
@@ -134,7 +149,7 @@ a, li {
     display: flex;
     align-items: center;
     position: absolute;
-    top: 62.5%;
+    top: 87%;
 }
 
 .pomodoro__buttons > button {
@@ -142,7 +157,7 @@ a, li {
     background: none;
     cursor: pointer;
     border-radius: 5px;
-    box-shadow: 0px 4px 2px 0px #00000033;
+    box-shadow: inset 0px -4px 2px 0px #0000003a;
     font-size: 2em;
     text-transform: uppercase;
     width: 200px;
@@ -151,8 +166,10 @@ a, li {
     font-weight: 300;
 }
 
-.pomodoro__buttons > button:hover {
-    opacity: 0.9;
+.pomodoro__buttons > button:focus {
+    transform: translateY(4px);
+    box-shadow: inset 0px 2px 4px 1px #0000001c;
+    transition: color 0.5s ease-in-out 0s;
 }
 
 #button__start {
@@ -187,7 +204,7 @@ a, li {
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    background-color: #020202be;
+    background-color: var(--box-timer);
 }
 
 .themes__input {

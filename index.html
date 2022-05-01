@@ -17,18 +17,78 @@
             <div class="menu__nav">
                 <ul class="menu__nav--opts">
                     <li>
-                        <a href="#" class="menu__links"><img src="images/settings-outline.svg">Settings</a>
+                        <a href="#" class="menu__links"><img src="images/config-white.png">Settings</a>
                     </li>
                     <li>
-                        <a href="#" class="menu__links"><img src="images/game-controller-outline.svg">Pokedex</a>
+                        <a href="#" class="menu__links"><img src="images/graph-white.png">Pokedex</a>
                     </li>
                     <li>
-                        <a href="pages/login.html" class="menu__links"><img src="images/person-circle-outline.svg">Login</a>
+                        <a href="pages/login.html" class="menu__links"><img src="images/user-white.png">Login</a>
                     </li>
                 </ul>
             </div>
         </nav>
     </header>
+    <div class="settings">
+        <div class="settings__timer">
+            <h1>Timer Settings</h1>
+            <div class="settings__minutes">
+                <h2>Time (minutes)</h2>
+                <div class="settings__minutes--inputs">
+                    <div class="minutes__pomodoro">
+                        <h3>Pomodoro</h3>
+                        <input type="number" min="1" value="25" step="1" name="" id="timer-pomodoro">
+                    </div>
+                    <div class="minutes__short-brk">
+                        <h3>Short Break</h3>
+                        <input type="number" min="1" value="5" step="1" name="" id="timer-short-brk">
+                    </div>
+                    <div class="minutes__long-brk">
+                        <h3>Long Break</h3>
+                        <input type="number" min="1" value="15" step="1" name="" id="timer-long-brk">
+                    </div>
+                </div>
+            </div>
+            <div class="settings__auto">
+                <div class="auto__break">
+                    <h3>Auto start Breaks?</h3>
+                    <div class="break__format">
+                        <div class="break__input"></div>
+                    </div>
+                </div>
+                <div class="auto__pomodoro">
+                    <h3>Auto start Pomodoros?</h3>
+                    <div class="break__format">
+                        <div class="break__input"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="settings__alarm">
+                <div class="alarm__name">
+                    <h3>Alarm Sound</h3>
+                </div>
+                <div class="alarm__config">
+                    <div class="alarm__type">
+                        <div class="alarm__input">
+                            <span>Fire Red</span>
+                            <img src="images/down-arrow-black.png">
+                        </div>
+                        <div class="alarm__dropdown">
+                            <div id="">Fire Red</div>
+                            <div id="">Kitchen</div>
+                            <div id=""></div>
+                        </div>
+                    </div>
+                    <div class="alarm__sound">
+                        
+                    </div>
+                    <div class="alarm__repeat">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="pomodoro">
             <div class="pomodoro__modes">
