@@ -1,3 +1,6 @@
+
+//RANDOM POKEBOLA
+
 // RANDOM POKEMON
 var id = Math.floor(Math.random() * 150) + 1
 // PULL POKEMON
@@ -7,8 +10,8 @@ const fetchPokemon = () => {
     fetch(url)
     .then(response => response.json())
     .then(pokemon => {
-        console.log("Nome: "+pokemon.name+"\nId: "+pokemon.id)
-
+        console.log("Nome: "+pokemon.name+"\nId: "+pokemon.id+"\nimg: "+ pokemon.sprites.front_default)
+        console.log(pokemon)
     })
 
 }
