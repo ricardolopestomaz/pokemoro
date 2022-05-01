@@ -5,13 +5,9 @@
     --background: #E4EFF3;
     --font: 'Open Sans', sans-serif;
     --color-font: black;
-    --color-font2: #1f2464;
-    --box-timer: #3d428c60;
-    --box-timer-active: #3d428c2d;
-}
-
-body {
-    background-color: var(--background);
+    --color-font2: white;
+    --box-timer: #1616167e;
+    --box-timer-active: #1616167e;
 }
 
 * {
@@ -21,10 +17,19 @@ body {
     font-family: var(--font);
 }
 
+body {
+    background-image: url('../images/background.jpg');
+    background-repeat: no-repeat;
+    background-position: center center; 
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    backdrop-filter: blur(5px);
+    height: 99vh;
+}
+
 a {
     list-style: none;
     text-decoration: none;
-    color: var(--color-font);
 }
 
 .container {
@@ -45,15 +50,22 @@ a {
 .header a {
     display: flex;
     align-items: center;
+    justify-content: center;
     font-size: 1.5em;
     margin: 15px;
+    color: var(--color-font2);
+}
+
+.header a img {
+    margin-right: 10px;
+    max-width: 60px;
 }
 
 .header p {
     font-size: 1.1em;
     color: var(--color-font2);
     font-weight: bold;
-    opacity: 0.6;
+    opacity: 0.8;
     margin: 10px;
 }
 
@@ -68,9 +80,9 @@ a {
 .login-box span {
     display: block;
     color: var(--color-font2);
-    font-weight: 600;
+    font-weight: 900;
     font-size: 0.8em;
-    opacity: 0.6;
+    opacity: 0.8;
     margin: 0px 0px 5px;
 }
 
