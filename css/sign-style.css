@@ -118,4 +118,9 @@ a {
     border-radius: 5px;
     cursor: pointer;
     min-width: 250px;
+    transition: 0.3s;
+}
+
+#sign__button:hover {
+    background: #BD3736;
 }
