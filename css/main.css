@@ -25,7 +25,7 @@ body {
     background-repeat: no-repeat;
     background-position: center center; 
     background-attachment: fixed;
-    background-size: 100% 100%;
+    background-size: cover;
     height: 99vh;
     position: relative;
 }
@@ -40,6 +40,73 @@ hr {
     background-color: gray;
     height: 2px;
     opacity: 0.6;
+}
+
+.header__menu {
+    display: flex;
+    justify-content: space-around;
+    margin: 5px 0px;
+    align-items: center;
+    color: var(--color-font);
+}
+
+.menu__logo h1 {
+    display: flex;
+    align-items: center;
+}
+
+.menu__logo a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu__logo img {
+    width: 35px;
+    margin-right: 5px;
+}
+
+#menu__home {
+    display: flex;
+    align-items: center;
+    padding: 0px 10px;
+    color: var(--color-font2);
+}
+
+#checkbox--hamburguer {
+    display: none;
+}
+
+.menu__nav {
+    display: flex;
+    align-items: center;
+}
+
+.menu__nav--opts {
+    display: flex;
+    align-items: center;
+}
+
+.menu__links {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.185);
+    padding: 5px 10px 5px 10px;
+    margin: 10px;
+    border-radius: 5px;
+    color: var(--color-font2);
+    box-shadow:  3px 3px 4px 0px #00000047;
+}
+
+.menu__links:hover {
+    box-shadow: inset -1px -1px 2px 2px #00000021;
+    transform: translateX(2px) translateY(2px);
+}
+
+.menu__links > img {
+    max-width: 20px;
+    margin-right: 10px;
 }
 
 .settings {
@@ -261,63 +328,6 @@ hr {
     color: rgb(85, 85, 85);
 }
 
-.header__menu {
-    display: flex;
-    justify-content: space-around;
-    margin: 5px 0px;
-    align-items: center;
-    color: var(--color-font);
-}
-
-.menu__logo a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.menu__logo img {
-    width: 35px;
-    margin-right: 5px;
-}
-
-#menu__home {
-    align-items: center;
-    padding: 10px;
-    color: var(--color-font2);
-}
-
-.menu__nav {
-    display: flex;
-    align-items: center;
-}
-
-.menu__nav--opts {
-    display: flex;
-    align-items: center;
-}
-
-.menu__links {
-    display: flex;
-    align-items: center;
-    font-weight: bold;
-    background-color: rgba(0, 0, 0, 0.185);
-    padding: 5px 10px 5px 10px;
-    margin: 10px;
-    border-radius: 5px;
-    color: var(--color-font2);
-    box-shadow:  3px 3px 4px 0px #00000047;
-}
-
-.menu__links:hover {
-    box-shadow: inset -1px -1px 2px 2px #00000021;
-    transform: translateX(2px) translateY(2px);
-}
-
-.menu__links > img {
-    max-width: 20px;
-    margin-right: 10px;
-}
-
 .container {
     display: flex;
     align-items: center;
@@ -405,6 +415,7 @@ hr {
     color: var(--color-font2);
     font-weight: bold;
 }
+
 .pomodoro__pokebola > img{
     width: 90px;
     position: relative;
@@ -412,5 +423,284 @@ hr {
 }
 
 @media (max-width: 1400px) {
+    .pomodoro {
+        min-width: 500px;
+        border-radius: 25px;
+        padding: 20px 30px 20px;
+    }
     
+    .pomodoro__modes {
+        margin: 10px 0px 0px;
+    }
+    
+    .pomodoro__modes > button {
+        margin: 0px 20px;
+        border-radius: 5px;
+        font-size: 1.1em;
+        padding: 5px 10px;
+    }
+    
+    .pomodoro__timer {
+        font-size: 9em;
+        margin-bottom: 15px;
+    }
+    
+    .pomodoro__buttons > button {
+        border-radius: 5px;
+        font-size: 2em;
+        width: 232px;
+        padding: 10px;
+        margin: 0px -20px;
+    }
+
+    .pomodoro__pokebola > img{
+        width: 90px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .pomodoro {
+        min-width: 400px;
+        border-radius: 20px;
+        padding: 15px 20px 15px;
+    }
+    
+    .pomodoro__modes {
+        margin: 10px 0px 0px;
+    }
+    
+    .pomodoro__modes > button {
+        margin: 0px 15px;
+        border-radius: 5px;
+        font-size: 1em;
+        padding: 5px 10px;
+    }
+    
+    .pomodoro__timer {
+        font-size: 8em;
+        margin-bottom: 15px;
+    }
+
+    .pomodoro__buttons {
+        top: 82%;
+    }
+    
+    .pomodoro__buttons > button {
+        border-radius: 5px;
+        font-size: 1.6em;
+        width: 196px;
+        padding: 10px;
+        margin: 0px -20px;
+    }
+
+    .pomodoro__pokebola > img{
+        width: 90px;
+    }
+}
+
+@media (max-width: 750px) {
+    .menu__logo img {
+        width: 30px;
+    }
+    
+    #menu__home {
+        padding: 5px;
+    }
+    
+    .menu__links {
+        padding: 4px 8px 4px 8px;
+        margin: 8px;
+        box-shadow:  2px 2px 3px 0px #00000047;
+    }
+}
+
+@media (max-width: 600px) {
+    #checkbox--hamburguer {
+        display: block;
+        position: absolute;
+        opacity: 0;
+    }
+
+    .menu__hamburguer label {
+        cursor: pointer;
+        position: relative;
+        display: block;
+        height: 10px;
+        width: 20px;
+    }
+
+    .menu__hamburguer label > span {
+        position: absolute;
+        display: block;
+        height: 2px;
+        width: 100%;
+        border-radius: 30px;
+        background-color: var(--start-button);
+        transition: 0.25s ease-in-out;
+    }
+
+    .menu__hamburguer label > span:nth-child(1) {
+        top: 0;
+    }
+
+    .menu__hamburguer label > span:nth-child(2) {
+        top: 6px;
+    }
+
+    .menu__hamburguer label > span:nth-child(3) {
+        top: 12px;
+    }
+
+    #checkbox--hamburguer:checked + label > span:nth-child(1) {
+        transform: rotate(-45deg);
+        top: 8px;
+    }
+
+    #checkbox--hamburguer:checked + label > span:nth-child(2) {
+        opacity: 0;
+    }
+
+    #checkbox--hamburguer:checked + label > span:nth-child(3) {
+        transform: rotate(45deg);
+        top: 8px;
+    }
+
+    .header__menu {
+        margin: 5px 0px;
+    }
+    
+    .menu__logo h1 {
+        font-size: 1.5em;
+    }
+
+    .menu__logo img {
+        width: 25px;
+        margin-right: 5px;
+    }
+    
+    #menu__home {
+        padding: 0px 8px;
+    }
+    
+    .menu__nav--opts {
+        display: none;
+    }
+
+    .pomodoro {
+        min-width: 300px;
+        border-radius: 15px;
+        padding: 10px 15px 10px;
+    }
+    
+    .pomodoro__modes {
+        margin: 8px 0px 0px;
+    }
+    
+    .pomodoro__modes > button {
+        margin: 0px 10px;
+        border-radius: 5px;
+        font-size: 1em;
+        padding: 5px 10px;
+    }
+    
+    .pomodoro__timer {
+        font-size: 7em;
+        margin-bottom: 10px;
+    }
+
+    .pomodoro__buttons {
+        top: 80%;
+    }
+    
+    .pomodoro__buttons > button {
+        border-radius: 5px;
+        font-size: 1.4em;
+        width: 175px;
+        padding: 10px;
+        margin: 0px -20px;
+    }
+
+    .pomodoro__pokebola > img{
+        width: 90px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pomodoro {
+        min-width: 100px;
+        border-radius: 10px;
+        padding: 5px 10px 5px;
+    }
+    
+    .pomodoro__modes {
+        margin: 6px 0px 0px;
+    }
+    
+    .pomodoro__modes > button {
+        margin: 0px 5px;
+        border-radius: 5px;
+        font-size: 0.9em;
+        padding: 5px 10px;
+    }
+    
+    .pomodoro__timer {
+        font-size: 6em;
+        margin-bottom: 10px;
+    }
+
+    .pomodoro__buttons {
+        top: 80%;
+    }
+    
+    .pomodoro__buttons > button {
+        border-radius: 5px;
+        font-size: 1.3em;
+        width: 146px;
+        padding: 8px;
+        margin: 0px -18px;
+    }
+
+    .pomodoro__pokebola > img{
+        width: 80px;
+    }
+}
+
+@media (max-width: 370px) {
+    .pomodoro {
+        min-width: 100px;
+        border-radius: 10px;
+        padding: 3px 8px 3px;
+    }
+    
+    .pomodoro__modes {
+        margin: 4px 0px 0px;
+    }
+    
+    .pomodoro__modes > button {
+        margin: 0px 3px;
+        border-radius: 5px;
+        font-size: 0.8em;
+        padding: 5px 8px;
+    }
+    
+    .pomodoro__timer {
+        font-size: 5em;
+        margin-bottom: 8px;
+    }
+
+    .pomodoro__buttons {
+        top: 80%;
+    }
+    
+    .pomodoro__buttons > button {
+        border-radius: 5px;
+        font-size: 1.2em;
+        width: 120px;
+        padding: 6px;
+        margin: 0px -18px;
+    }
+
+    .pomodoro__pokebola > img{
+        width: 80px;
+    }
 }
