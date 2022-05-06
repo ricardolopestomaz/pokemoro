@@ -5,25 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokemoro - Pomodoro Timer with Pokemon</title>
-    <link rel="shortcut icon" href="images/pokebola-comum.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="images/icons/pokebola-comum.svg" type="image/x-icon">
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
     <header class="header">
         <nav class="header__menu">
             <div class="menu__logo">
-                <h1><a href="#" id="menu__home"><img src="images/pokebola-comum.svg">Pokemoro</a></h1>
+                <h1><a href="#" id="menu__home"><img src="images/icons/pokebola-comum.svg">Pokemoro</a></h1>
             </div>
             <div class="menu__nav">
                 <ul class="menu__nav--opts">
                     <li>
-                        <a href="#" class="menu__links"><img src="images/config-white.png">Settings</a>
+                        <a href="#" class="menu__links"><img src="images/icons/config-white.png">Settings</a>
                     </li>
                     <li>
-                        <a href="#" class="menu__links"><img src="images/graph-white.png">Pokedex</a>
+                        <a href="#" class="menu__links"><img src="images/icons/graph-white.png">Pokedex</a>
                     </li>
                     <li>
-                        <a href="pages/login.html" class="menu__links"><img src="images/user-white.png">Login</a>
+                        <a href="pages/login.html" class="menu__links"><img src="images/icons/user-white.png">Login</a>
                     </li>
                 </ul>
             </div>
@@ -31,7 +31,11 @@
     </header>
     <div class="settings">
         <div class="settings__timer">
-            <h1>Timer Settings</h1>
+            <div class="settings__title">
+                <h1>Timer Settings</h1>
+                <img src="images/icons/remove-black-sm.png">
+            </div>
+            <hr>
             <div class="settings__minutes">
                 <h2>Time (minutes)</h2>
                 <div class="settings__minutes--inputs">
@@ -49,29 +53,32 @@
                     </div>
                 </div>
             </div>
+            <hr>
             <div class="settings__auto">
                 <div class="auto__break">
-                    <h3>Auto start Breaks?</h3>
+                    <h2>Auto start Breaks?</h2>
                     <div class="break__format">
                         <div class="break__input"></div>
                     </div>
                 </div>
+                <hr>
                 <div class="auto__pomodoro">
-                    <h3>Auto start Pomodoros?</h3>
+                    <h2>Auto start Pomodoros?</h2>
                     <div class="break__format">
                         <div class="break__input"></div>
                     </div>
                 </div>
             </div>
+            <hr>
             <div class="settings__alarm">
                 <div class="alarm__name">
-                    <h3>Alarm Sound</h3>
+                    <h2>Alarm Sound</h2>
                 </div>
                 <div class="alarm__config">
                     <div class="alarm__type">
                         <div class="alarm__input">
                             <span>Fire Red</span>
-                            <img src="images/down-arrow-black.png">
+                            <img src="images/icons/down-arrow-black.png">
                         </div>
                         <div class="alarm__dropdown">
                             <div id="">Fire Red</div>
@@ -80,10 +87,12 @@
                         </div>
                     </div>
                     <div class="alarm__sound">
-                        
+                        <span>0</span>
+                        <input type="range" min="0" max="100" value="0" name="" id="">
                     </div>
                     <div class="alarm__repeat">
-
+                        <span>repeat</span>
+                        <input type="number" name="" id="repeat-number">
                     </div>
                 </div>
             </div>
@@ -102,19 +111,12 @@
             <div class="pomodoro__buttons">
                 <button id="button__start">Start</button>
                 <div class="pomodoro__pokebola">
-                    <img src="images/pokebola-comum.svg">
+                    <img src="images/icons/pokebola-comum.svg">
                 </div>
                 <button id="button__stop">Stop</button>
             </div>
         </div>
     </div>
-    <aside class="aside">
-        <div class="themes">
-            <div class="themes__format">
-                <div class="themes__input"></div>
-            </div>
-        </div>
-    </aside>
     <script type="module" src="./js/main.js"></script>
 </body>
 </html>

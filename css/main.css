@@ -2,12 +2,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-    --background: #E4EFF3;
+    --background: #eaf1f3;
     --font: 'Open Sans', sans-serif;
     --color-font: black;
     --color-font2: white;
-    --start-button: #4a85ec;
-    --stop-button: #ec5252;
+    --color-font-settings: rgb(85, 85, 85);
+    --start-button: rgb(216, 216, 216);
+    --stop-button: rgb(36, 36, 36);
     --box-timer: #1616167e;
     --box-timer-active: #1616167e;
 }
@@ -20,12 +21,13 @@
 }
 
 body {
-    background-image: url('../images/back/night/background1.gif');
+    background-image: url('../images/backgrounds/night/background-night1.gif');
     background-repeat: no-repeat;
     background-position: center center; 
     background-attachment: fixed;
     background-size: 100% 100%;
     height: 99vh;
+    position: relative;
 }
 
 a, li {
@@ -34,10 +36,134 @@ a, li {
     color: var(--color-font);
 }
 
-.settings {
-    position: absolute;
-    display: none;
+hr {
+    background-color: gray;
+    height: 2px;
+    opacity: 0.6;
 }
+
+.settings {
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+}
+
+.settings__timer {
+    position: relative;
+    background-color: var(--background);
+    min-width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.settings__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 0px 15px;
+}
+
+.settings__title > h1 {
+    color: rgb(160, 160, 160);
+    text-transform: uppercase;
+    font-size: 18px;
+}
+
+.settings__title > img {
+    height: 15px;
+    width: 15px;
+    opacity: 0.4;
+}
+
+.settings__minutes {
+    margin: 15px 0px;
+}
+
+.settings__minutes > h2 {
+    font-size: 16px;
+    color: var(--color-font-settings);
+}
+
+.settings__minutes--inputs {
+    display: flex;
+    align-items: center;
+}
+
+.settings__minutes--inputs div {
+    margin: 5px 10px;
+}
+
+.settings__minutes--inputs h3 {
+    color: rgb(160, 160, 160);
+    font-size: 14px;
+    margin: 5px 0px;
+}
+
+.settings__minutes--inputs input {
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(218, 218, 218);
+    color: rgb(85, 85, 85);
+    width: 100px;
+    padding: 10px 5px;
+    font-size: 16px;
+}
+
+.settings__auto h2{
+    font-size: 16px;
+    color: var(--color-font-settings);
+}
+
+.auto__break, .auto__pomodoro {
+    margin: 15px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.break__format {
+    display: block;
+    height: 30px;
+    width: 60px;
+    background-color: gray;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.break__input {
+    height: 25px;
+    width: 25px;
+    background-color: var(--background);
+    border-radius: 50%;
+    box-shadow: rgb(0 0 0 / 30%) 0px 1px 1px;
+}
+
+.settings__alarm {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0px;
+}
+
+.alarm__name h2{
+    font-size: 16px;
+    color: var(--color-font-settings);
+    margin: 10px 0px 0px;
+}
+
+/*.alarm__config {
+
+}*/
 
 .header__menu {
     display: flex;
@@ -158,10 +284,12 @@ a, li {
     box-shadow: inset 0px -4px 2px 0px #0000003a;
     font-size: 2em;
     text-transform: uppercase;
-    width: 200px;
+    width: 275px;
     padding: 10px;
-    color: var(--color-font2);
     font-weight: 300;
+    margin: 0px -20px;
+    position: relative;
+    z-index: 1;
 }
 
 .pomodoro__buttons > button:focus {
@@ -172,43 +300,17 @@ a, li {
 
 #button__start {
     background-color: var(--start-button);
+    color: var(--color-font);
+    font-weight: bold;
 }
 
 #button__stop {
     background-color: var(--stop-button);
+    color: var(--color-font2);
+    font-weight: bold;
 }
 .pomodoro__pokebola > img{
     width: 90px;
-    margin: 0px 10px;
-}
-
-.aside {
-    display: flex;
-    justify-content: flex-end;
-}
-
-.themes {
-    margin-top: -80px;
-    margin-right: 120px;
-    display: flex;
-    align-items: center;
-}
-
-.themes__format {
-    margin: 0px 10px;
-    height: 100px;
-    width: 40px;
-    border-radius: 30px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    background-color: var(--box-timer);
-}
-
-.themes__input {
-    margin: 8px 5px;
-    min-width: 28px;
-    min-height: 28px;
-    border-radius: 50%;
-    background-color: var(--background);
+    position: relative;
+    z-index: 2;
 }
