@@ -22,7 +22,7 @@ body {
     background-repeat: no-repeat;
     background-position: center center; 
     background-attachment: fixed;
-    background-size: 100% 100%;
+    background-size: cover;
     height: 99vh;
 }
 
@@ -117,6 +117,11 @@ a {
     border-radius: 5px;
     cursor: pointer;
     min-width: 250px;
+    transition: 0.3s;
+}
+
+#login__button:hover {
+    background-color: #BD3736;
 }
 
 .aside__sign-up {
@@ -136,4 +141,97 @@ a {
     font-size: 0.9em;
     font-weight: bold;
     color: var(--color-font2);
+}
+
+@media (max-width: 450px) {
+    .header a {
+        font-size: 1.2em;
+        margin: 10px;
+    }
+    
+    .header a img {
+        margin-right: 10px;
+        min-width: 45px;
+    }
+    
+    .header p {
+        font-size: 1em;
+        margin: 10px;
+    }
+    
+    .login-box {
+        padding: 15px;
+        margin: 10px;
+        min-width: 350px;
+    }
+    
+    .login-box span {
+        font-size: 0.8em;
+        opacity: 0.8;
+        margin: 0px 0px 5px;
+    }
+    
+    #login__email, #login__pwd {
+        padding: 8px 10px;
+        border-radius: 5px;
+        font-size: 1em;
+    }
+    
+    #login__button {
+        padding: 10px;
+        font-size: 1em;
+        border-radius: 5px;
+        min-width: 250px;
+    }
+
+    .aside__sign-up p {
+        margin-bottom: 10px;
+        font-size: 1em;
+    }
+    
+    .aside__sign-up a {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 370px) {
+    .header a {
+        font-size: 1.1em;
+        margin: 10px;
+    }
+    
+    .login-box {
+        padding: 15px;
+        margin: 10px;
+        min-width: 300px;
+    }
+    
+    .login-box span {
+        font-size: 0.8em;
+        opacity: 0.8;
+        margin: 0px 0px 5px;
+    }
+    
+    #login__email, #login__pwd {
+        padding: 8px 10px;
+        width: 100%;
+        border-radius: 5px;
+        font-size: 1em;
+    }
+    
+    #login__button {
+        padding: 10px;
+        font-size: 1em;
+        border-radius: 5px;
+        min-width: 200px;
+    }
+
+    .aside__sign-up p {
+        margin-bottom: 10px;
+        font-size: 0.9em;
+    }
+    
+    .aside__sign-up a {
+        font-size: 0.8em;
+    }
 }
