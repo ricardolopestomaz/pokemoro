@@ -16,12 +16,14 @@ function pull(){
         .then(pokemon => {
             name = pokemon.name
             img = pokemon.sprites.front_default
-            console.log("Nome: "+name)
-            console.log("\nId: "+id)
+            document.querySelector("#pokemon--name").innerHTML = `${name}`
+            document.querySelector("#pokemon--id").innerHTML = `ID: ${id}`
+            console.log(`Nome: ${name}`)
+            console.log(`\nID: ${id}`)
             console.log("\nimg: "+ img)
 
-            document.querySelector(".pomodoro__pokebola").innerHTML = `
-            <img src="${pokemon.sprites.front_default}"/>
+            document.querySelector(".pokemon__image").innerHTML = `
+            <img id="pokemon--img" src="${pokemon.sprites.front_default}" alt="Pokemon Image" style="width: 200px"/>
             `
 
             if(rare.includes(id) == true){

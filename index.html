@@ -9,10 +9,11 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+    <!--============================= HEADER =============================-->
     <header class="header">
         <nav class="header__menu">
             <div class="menu__logo">
-                <h1><a href="#" id="menu__home"><img src="images/icons/pokebola-comum.svg">Pokemoro</a></h1>
+                <h1><a href="#" id="menu__home"><img src="images/icons/pokebola-comum.svg" alt="Icon Pokebola">Pokemoro</a></h1>
             </div>
             <div class="menu__nav">
                 <div class="menu__hamburguer">
@@ -26,19 +27,20 @@
                 <div class="menu__dropdown">
                     <ul class="menu__nav--opts">
                         <li>
-                            <a href="#" class="menu__links"><img src="images/icons/config-white.png">Settings</a>
+                            <a href="#" class="menu__links"><img src="images/icons/config-white.png" alt="Icon Config">Settings</a>
                         </li>
                         <li>
-                            <a href="#" class="menu__links"><img src="images/icons/graph-white.png">Pokedex</a>
+                            <a href="#" class="menu__links"><img src="images/icons/graph-white.png" alt="Icon Graph">Pokedex</a>
                         </li>
                         <li>
-                            <a href="pages/login.html" class="menu__links"><img src="images/icons/user-white.png">Login</a>
+                            <a href="pages/login.html" class="menu__links"><img src="images/icons/user-white.png" alt="Icon Login User">Login</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
+    <!--============================= DIV SETTINGS =============================-->
     <div class="settings">
         <div class="settings__timer">
             <div class="settings__title">
@@ -88,7 +90,7 @@
                     <div class="alarm__type">
                         <div class="alarm__input">
                             <span>Fire Red</span>
-                            <img src="images/icons/down-arrow-black.png">
+                            <img src="images/icons/down-arrow-black.png" alt="Icon Down Arrow">
                             <div class="alarm__dropdown">
                                 <div id="fire-red--alarm">Fire Red</div>
                                 <div id="kitchen--alarm">Kitchen</div>
@@ -107,6 +109,21 @@
             </div>
         </div>
     </div>
+    <div class="pokemon-container">
+        <div class="pokemon__window">
+            <div class="pokemon__header">
+                <img id="close--pokemon-container" src="images/icons/remove-black-sm.png" alt="">
+            </div>
+            <div class="pokemon__image">
+                
+            </div>
+            <div class="pokemon__info">
+                <h1 id="pokemon--name"></h1>
+                <span id="pokemon--id"></span>
+            </div>
+        </div>
+    </div>
+    <!--============================= CONTAINER POMODORO =============================-->
     <div class="container">
         <div class="pomodoro">
             <div class="pomodoro__modes">
@@ -115,12 +132,12 @@
                 <button id="modes--long-brk">Long Break</button>
             </div>
             <div class="pomodoro__timer">
-                <span>25:00</span>
+                <span id="timer--number"></span>
             </div>
             <div class="pomodoro__buttons">
                 <button id="button__start">Start</button>
                 <div class="pomodoro__pokebola">
-                   
+                   <img id="pokebola--icon" src="images/icons/pokebola-comum.svg" alt="Icon Pokebola">
                 </div>
                 <button id="button__stop">Stop</button>
             </div>
