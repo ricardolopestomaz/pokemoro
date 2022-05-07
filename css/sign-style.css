@@ -1,15 +1,21 @@
+/*============================= RULES =============================*/
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap');
 
+/*============================= VARIABLES =============================*/
 :root {
+    /*============================= COLORS =============================*/
     --background: #E4EFF3;
+    --box-timer: #1616167e;
+    --box-timer-active: #1616167e;
+
+    /*============================= FONT VARIABLES =============================*/
     --font: 'Open Sans', sans-serif;
     --color-font: black;
     --color-font2: white;
-    --box-timer: #1616167e;
-    --box-timer-active: #1616167e;
 }
 
+/*============================= RESET HTML =============================*/
 * {
     margin: 0;
     padding: 0;
@@ -17,6 +23,7 @@
     font-family: var(--font);
 }
 
+/*============================= BASE =============================*/
 body {
     background-image: url('../images/backgrounds/night/background-night1.gif');
     background-repeat: no-repeat;
@@ -32,6 +39,7 @@ a {
     text-decoration: none;
 }
 
+/*============================= CONTAINER =============================*/
 .container {
     display: flex;
     align-items: center;
@@ -40,6 +48,7 @@ a {
     height: 98vh;
 }
 
+/*============================= HEADER =============================*/
 .header {
     display: flex;
     align-items: center;
@@ -69,6 +78,7 @@ a {
     margin: 10px;
 }
 
+/*============================= SIGN UP BOX =============================*/
 .sign-box {
     background-color: var(--box-timer);
     border-radius: 15px;
@@ -125,6 +135,7 @@ a {
     background: #BD3736;
 }
 
+/*============================= MEDIAS =============================*/
 @media (max-width: 450px) {
     .header a {
         font-size: 1.2em;
