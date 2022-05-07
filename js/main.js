@@ -8,8 +8,8 @@ btn_stop.addEventListener("click", pomodoroStop)
 let timer
 let timer_number = document.querySelector("#timer--number")
 
-let min = 25
-let sec = 0
+let min = 0
+let sec = 10
 let sec_string = `0${sec}`
 let min_string = `${min}`
 timer_number.innerHTML = `${min_string}:${sec_string}`
