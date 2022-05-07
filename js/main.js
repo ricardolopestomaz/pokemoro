@@ -10,7 +10,13 @@ let timer_number = document.querySelector("#timer--number")
 
 let min = 0
 let sec = 10
-let sec_string = `0${sec}`
+
+if (sec <= 9){
+    let sec_string = `0${sec}`
+}
+else{
+    let sec_string = `${sec}`
+}
 let min_string = `${min}`
 timer_number.innerHTML = `${min_string}:${sec_string}`
 
