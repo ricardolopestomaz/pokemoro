@@ -24,6 +24,7 @@ body {
     background-attachment: fixed;
     background-size: cover;
     height: 99vh;
+    overflow: hidden;
 }
 
 a {

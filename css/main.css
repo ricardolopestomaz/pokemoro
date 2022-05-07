@@ -28,6 +28,7 @@ body {
     background-size: cover;
     height: 99vh;
     position: relative;
+    overflow: hidden;
 }
 
 a, li {
