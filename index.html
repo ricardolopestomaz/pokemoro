@@ -27,7 +27,9 @@
                 <div class="menu__dropdown">
                     <ul class="menu__nav--opts">
                         <li>
-                            <a href="#" class="menu__links"><img src="images/icons/config-white.png" alt="Icon Config">Settings</a>
+                            <button onclick="setting()" class="button__a">
+                                <a href="#" class="menu__links"><img src="images/icons/config-white.png" alt="Icon Config">Settings</a>
+                            </button>
                         </li>
                         <li>
                             <a href="#" class="menu__links"><img src="images/icons/graph-white.png" alt="Icon Graph">Pokedex</a>
@@ -45,7 +47,9 @@
         <div class="settings__timer">
             <div class="settings__title">
                 <h1>Timer Settings</h1>
-                <img src="images/icons/remove-black-sm.svg">
+                <button onclick="settingClose()" class="button__a">
+                    <img src="images/icons/remove-black-sm.svg">
+                </button>
             </div>
             <hr>
             <div class="settings__minutes">
@@ -145,6 +149,18 @@
     </div>
 
     <audio src="./sound/rain.mp3" autoplay loop>
+
+    <script>
+        function setting(){
+            const root = document.documentElement;
+            root.style.setProperty('--setting', "flex")
+        }
+
+        function settingClose(){
+            const root = document.documentElement;
+            root.style.setProperty('--setting', "none")
+        }
+    </script>
 
     <script type="module" src="./js/main.js"></script>
 </body>

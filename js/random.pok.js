@@ -41,5 +41,3 @@ function pull(){
 }
 
 pull()
-
-console.log(name)

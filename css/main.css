@@ -4,6 +4,7 @@
 
 /*============================= VARIABLES =============================*/
 :root {
+    --setting: none;
     /*============================= COLORS =============================*/
     --background: #eaf1f3;
     --start-button: rgb(216, 216, 216);
@@ -128,10 +129,16 @@ hr {
     left: 0;
     right: 0;
     margin: auto;
-    display: none;
+    display: var(--setting);
     align-items: center;
     justify-content: center;
     z-index: 5;
+}
+
+.button__a{
+    background: transparent;
+    border: none;
+    cursor: pointer;
 }
 
 .settings__timer {
