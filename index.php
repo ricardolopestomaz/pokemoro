@@ -43,11 +43,15 @@
         </nav>
     </header>
     <!--============================= DIV SETTINGS =============================-->
+    <?php 
+    (!empty($_GET['pagina'])?include(trim($_GET['pagina'])):include('./pages/setting.php'))
+    ?>
+    
     <div class="settings">
         <div class="settings__timer">
             <div class="settings__title">
                 <h1>Timer Settings</h1>
-                <button onclick="settingClose()" class="button__a">
+                <button onclick="settingClose()" class="button__a""""">
                     <img src="images/icons/remove-black-sm.svg">
                 </button>
             </div>
