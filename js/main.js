@@ -81,3 +81,4 @@ function openPokebola() {
         pokemon_container.style.display = "none"
     })
 }
+
