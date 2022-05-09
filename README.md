@@ -1,6 +1,8 @@
 # POKÉMORO
 
-<img src="https://i.ibb.co/B4YDLPR/20220508-202515-0000.jpg" >
+<img src="" >
+
+[![Braydon's GitHub Banner](./pokemoro/images/asset.gif)](https://braydoncoyer.dev)
 
 > Linha adicional de texto informativo sobre o que o projeto faz. Sua introdução deve ter cerca de 2 ou 3 linhas. Não exagere, as pessoas não vão ler.
 
