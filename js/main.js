@@ -19,7 +19,7 @@ else{
     sec_string = `${sec}`
 }
 */
-ler sec_string = `00`
+let sec_string = `00`
 let min_string = `${min}`
 timer_number.innerHTML = `${min_string}:${sec_string}`
 
