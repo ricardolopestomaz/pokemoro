@@ -8,7 +8,7 @@ btn_stop.addEventListener("click", pomodoroStop)
 let timer
 let timer_number = document.querySelector("#timer--number")
 
-let min = 1
+let min = 2
 let sec = 60
 /*
 let sec_string
@@ -20,7 +20,7 @@ else{
 }
 */
 let sec_string = `00`
-let min_string = `${min}`
+let min_string = `0${min}`
 timer_number.innerHTML = `${min_string}:${sec_string}`
 
 let btn_pokebola = document.querySelector("#pokebola--icon")
@@ -38,9 +38,9 @@ function pomodoroStop() {
 
 function runsTimer() {
     if (sec==0) {
-        sec = 10
+        sec = 60
     }
-    if (sec==10) {
+    if (sec==60) {
         min--
     }
     sec--
