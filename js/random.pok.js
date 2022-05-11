@@ -23,7 +23,7 @@ function pull(){
             console.log("\nimg: "+ img)
 
             document.querySelector(".pokemon__image").innerHTML = `
-            <img id="pokemon--img" src="${pokemon.sprites.front_default}" alt="Pokemon Image" style="width: 200px"/>
+            <img id="pokemon--img" src="${pokemon.sprites.front_default}" alt="Pokemon Image"/>
             `
 
             if(rare.includes(id) == true){
