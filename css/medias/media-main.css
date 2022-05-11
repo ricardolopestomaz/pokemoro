@@ -1,0 +1,538 @@
+/*============================= MEDIAS =============================*/
+
+@media (max-width: 1400px) {
+    .pomodoro {
+        min-width: 500px;
+        border-radius: 25px;
+        padding: 20px 30px 20px;
+    }
+    
+    .pomodoro__modes {
+        margin: 10px 0px 0px;
+    }
+    
+    .pomodoro__modes > button {
+        margin: 0px 20px;
+        border-radius: 5px;
+        font-size: 1.1em;
+        padding: 5px 10px;
+    }
+    
+    .pomodoro__timer {
+        font-size: 9em;
+        margin-bottom: 15px;
+    }
+    
+    .pomodoro__buttons > button {
+        border-radius: 5px;
+        font-size: 2em;
+        width: 233px;
+        padding: 10px;
+        margin: 0px -20px;
+    }
+
+    .pomodoro__pokebola > img{
+        width: 85px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .pomodoro {
+        min-width: 400px;
+        border-radius: 20px;
+        padding: 15px 20px 15px;
+    }
+    
+    .pomodoro__modes {
+        margin: 10px 0px 0px;
+    }
+    
+    .pomodoro__modes > button {
+        margin: 0px 15px;
+        border-radius: 5px;
+        font-size: 1em;
+        padding: 5px 10px;
+    }
+    
+    .pomodoro__timer {
+        font-size: 8em;
+        margin-bottom: 15px;
+    }
+
+    .pomodoro__buttons {
+        top: 85%;
+    }
+    
+    .pomodoro__buttons > button {
+        border-radius: 5px;
+        font-size: 1.6em;
+        width: 205px;
+        padding: 10px;
+        margin: 0px -20px;
+    }
+
+    .pomodoro__pokebola > img{
+        width: 70px;
+    }
+
+    .pokemon__window {
+        min-width: 450px;
+        min-height: 200px;
+    }
+    
+    .pokemon__header {
+        margin: 30px 30px;
+    }
+    
+    .pokemon__image {
+        margin: 0px 0px 10px;
+    }
+
+    .pokemon__image > img {
+        width: 150px
+    }
+    
+    #pokemon--name {
+        font-size: 1.5em;
+    }
+    
+    #pokemon--id {
+        margin: 10px 0px 10px;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 750px) {
+    .menu__logo img {
+        width: 30px;
+    }
+    
+    #menu__home {
+        padding: 5px;
+    }
+    
+    .menu__links {
+        padding: 4px 8px 4px 8px;
+        margin: 8px;
+        box-shadow:  2px 2px 3px 0px #00000047;
+    }
+
+    .pomodoro__buttons {
+        top: 85%;
+    }
+    
+    .pomodoro__buttons > button {
+        border-radius: 5px;
+        font-size: 1.6em;
+        width: 206px;
+        padding: 10px;
+        margin: 0px -20px;
+    }
+
+    .pomodoro__pokebola > img{
+        width: 70px;
+    }
+}
+
+@media (max-width: 600px) {
+    .header__menu {
+        flex-direction: row-reverse;
+        justify-content: space-around;
+        margin: 5px 10px;
+        padding: 20px 0px;
+    }
+
+    .menu__logo h1 {
+        font-size: 1.5em;
+    }
+
+    .menu__logo img {
+        width: 25px;
+        margin-right: 5px;
+    }
+    
+    #menu__home {
+        padding: 0px 8px;
+    }
+    
+    .menu__nav--opts {
+        display: none;
+    }
+
+    #checkbox--hamburguer {
+        display: block;
+        position: absolute;
+        opacity: 0;
+    }
+
+    .menu__hamburguer label {
+        cursor: pointer;
+        position: relative;
+        display: block;
+        height: 10px;
+        width: 20px;
+    }
+
+    .menu__hamburguer label > span {
+        position: absolute;
+        display: block;
+        height: 2px;
+        width: 100%;
+        border-radius: 30px;
+        background-color: var(--start-button);
+        transition: 0.25s ease-in-out;
+    }
+
+    .menu__hamburguer label > span:nth-child(1) {
+        top: 0;
+    }
+
+    .menu__hamburguer label > span:nth-child(2) {
+        top: 6px;
+    }
+
+    .menu__hamburguer label > span:nth-child(3) {
+        top: 12px;
+    }
+
+    #checkbox--hamburguer:checked + label > span:nth-child(1) {
+        transform: rotate(-45deg);
+        top: 8px;
+    }
+
+    #checkbox--hamburguer:checked + label > span:nth-child(2) {
+        opacity: 0;
+    }
+
+    #checkbox--hamburguer:checked + label > span:nth-child(3) {
+        transform: rotate(45deg);
+        top: 8px;
+    }
+
+    .pomodoro {
+        min-width: 300px;
+        border-radius: 15px;
+        padding: 10px 15px 10px;
+    }
+    
+    .pomodoro__modes {
+        margin: 8px 0px 0px;
+    }
+    
+    .pomodoro__modes > button {
+        margin: 0px 10px;
+        border-radius: 5px;
+        font-size: 1em;
+        padding: 5px 10px;
+    }
+    
+    .pomodoro__timer {
+        font-size: 7em;
+        margin-bottom: 20px;
+    }
+
+    .pomodoro__buttons {
+        top: 85%;
+    }
+    
+    .pomodoro__buttons > button {
+        border-radius: 5px;
+        font-size: 1.4em;
+        width: 190px;
+        padding: 10px;
+        margin: 0px -20px;
+    }
+
+    .pomodoro__pokebola > img{
+        width: 60px;
+    }
+
+    .pokemon__window {
+        min-width: 380px;
+        min-height: 150px;
+    }
+    
+    .pokemon__header {
+        margin: 20px 20px;
+    }
+
+    .settings__timer {
+        min-width: 300px;
+        padding: 15px;
+    }
+    
+    .settings__title {
+        margin: 0px 0px 15px;
+    }
+    
+    .settings__title > h1 {
+        font-size: 17px;
+    }
+    
+    .settings__title > img {
+        height: 20px;
+        width: 20px;
+    }
+    
+    .settings__minutes {
+        margin: 10px 0px;
+    }
+    
+    .settings__minutes > h2 {
+        font-size: 15px;
+    }
+    
+    .settings__minutes--inputs div {
+        margin: 5px 10px;
+    }
+    
+    .settings__minutes--inputs h3 {
+        font-size: 13px;
+        margin: 5px 0px;
+    }
+    
+    .settings__minutes--inputs input {
+        width: 90px;
+        padding: 10px 5px;
+        font-size: 15px;
+    }
+    
+    .settings__auto h2{
+        font-size: 15px;
+    }
+    
+    .auto__break, .auto__pomodoro, .auto__form {
+        margin: 10px 0px;
+        display: flex;
+    }
+    
+    .break__format {
+        height: 25px;
+        width: 50px;
+        padding: 5px;
+    }
+    
+    .break__input {
+        height: 18px;
+        width: 18px;
+    }
+    
+    .settings__alarm {
+        margin: 10px 0px;
+    }
+    
+    .alarm__name h2{
+        font-size: 15px;
+        margin: 5px 0px 0px;
+    }
+    
+    .alarm__input {
+        font-size: 13px;
+        padding: 8px;
+        min-width: 120px;
+    }
+
+    .alarm__dropdown {
+        top: 40px;
+        padding: 8px 0px;
+        min-width: 120px;
+    }
+
+    .alarm__sound {
+        margin: 10px 0px;
+    }
+
+    .alarm__sound input {
+        height: 5px;
+    }
+    
+    .alarm__sound input::-webkit-slider-thumb {
+        width: 15px;
+        height: 15px;
+    }
+    
+    .alarm__repeat span {
+        font-size: 13px;
+    }
+    
+    .alarm__repeat input {
+        max-width: 80px;
+        padding: 8px 5px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pomodoro {
+        min-width: 100px;
+        border-radius: 10px;
+        padding: 5px 10px 5px;
+    }
+    
+    .pomodoro__modes {
+        margin: 6px 0px 0px;
+    }
+    
+    .pomodoro__modes > button {
+        margin: 0px 5px;
+        border-radius: 5px;
+        font-size: 0.9em;
+        padding: 5px 10px;
+    }
+    
+    .pomodoro__timer {
+        font-size: 6em;
+        margin-bottom: 20px;
+    }
+
+    .pomodoro__buttons {
+        top: 85%;
+    }
+    
+    .pomodoro__buttons > button {
+        border-radius: 5px;
+        font-size: 1.3em;
+        width: 157px;
+        padding: 8px;
+        margin: 0px -18px;
+    }
+
+    .pomodoro__pokebola > img{
+        width: 60px;
+    }
+
+    .pokemon__window {
+        min-width: 350px;
+        min-height: 150px;
+    }
+    
+    .pokemon__header {
+        margin: 10px 10px;
+    }
+
+    .pokemon__image > img {
+        width: 130px
+    }
+    
+    #pokemon--name {
+        font-size: 1.4em;
+    }
+    
+    #pokemon--id {
+        margin: 10px 0px 10px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 370px) {
+    .pomodoro {
+        min-width: 100px;
+        border-radius: 10px;
+        padding: 3px 8px 3px;
+    }
+    
+    .pomodoro__modes {
+        margin: 4px 0px 0px;
+    }
+    
+    .pomodoro__modes > button {
+        margin: 0px 3px;
+        border-radius: 5px;
+        font-size: 0.8em;
+        padding: 5px 8px;
+    }
+    
+    .pomodoro__timer {
+        font-size: 5em;
+        margin-bottom: 15px;
+    }
+
+    .pomodoro__buttons {
+        top: 85%;
+    }
+    
+    .pomodoro__buttons > button {
+        border-radius: 5px;
+        font-size: 1.2em;
+        width: 137px;
+        padding: 6px;
+        margin: 0px -17px;
+    }
+
+    .pomodoro__pokebola > img{
+        width: 45px;
+    }
+
+    .pokemon__window {
+        min-width: 300px;
+        min-height: 150px;
+    }
+    
+    .pokemon__header {
+        margin: 10px 10px;
+    }
+
+    .pokemon__image > img {
+        width: 120px
+    }
+
+    .settings__title {
+        margin: 0px 0px 15px;
+    }
+    
+    .settings__title > h1 {
+        font-size: 16px;
+    }
+    
+    .settings__title > img {
+        height: 18px;
+        width: 18px;
+    }
+    
+    .settings__minutes {
+        margin: 10px 0px;
+    }
+    
+    .settings__minutes > h2 {
+        font-size: 14px;
+    }
+    
+    .settings__minutes--inputs h3 {
+        font-size: 12px;
+        margin: 5px 0px;
+    }
+    
+    .settings__minutes--inputs input {
+        width: 70px;
+        padding: 5px 5px;
+        font-size: 14px;
+    }
+    
+    .settings__auto h2{
+        font-size: 15px;
+    }
+    
+    .alarm__name h2{
+        font-size: 14px;
+    }
+    
+    .alarm__input {
+        font-size: 12px;
+        min-width: 100px;
+    }
+
+    .alarm__dropdown {
+        top: 30px;
+        min-width: 100px;
+    }
+
+    .alarm__repeat span {
+        font-size: 12px;
+    }
+    
+    .alarm__repeat input {
+        max-width: 70px;
+        padding: 6px 5px;
+        font-size: 14px;
+    }
+}

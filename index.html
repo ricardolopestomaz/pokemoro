@@ -7,6 +7,7 @@
     <title>Pokemoro - Pomodoro Timer with Pokemon</title>
     <link rel="shortcut icon" href="images/icons/pokebola-comum.svg" type="image/x-icon">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/medias/media-main.css">
 </head>
 <body>
     <!--============================= HEADER =============================-->
@@ -27,9 +28,7 @@
                 <div class="menu__dropdown">
                     <ul class="menu__nav--opts">
                         <li>
-                            <button onclick="setting()" class="button__a">
-                                <a href="#" class="menu__links"><img src="images/icons/config-white.png" alt="Icon Config">Settings</a>
-                            </button>
+                            <a href="#" class="menu__links" id="btn--setting"><img src="images/icons/config-white.png" alt="Icon Config">Settings</a>
                         </li>
                         <li>
                             <a href="#" class="menu__links"><img src="images/icons/graph-white.png" alt="Icon Graph">Pokedex</a>
@@ -47,9 +46,7 @@
         <div class="settings__timer">
             <div class="settings__title">
                 <h1>Timer Settings</h1>
-                <button onclick="settingClose()" class="button__a">
-                    <img src="images/icons/remove-black-sm.svg">
-                </button>
+                <img id="close--settings" src="images/icons/remove-black-sm.svg" alt="Close Icon">
             </div>
             <hr>
             <div class="settings__minutes">
@@ -57,15 +54,15 @@
                 <div class="settings__minutes--inputs">
                     <div class="minutes__pomodoro">
                         <h3>Pomodoro</h3>
-                        <input type="number" min="1" value="25" step="1" name="" id="timer-pomodoro">
+                        <input type="number" min="10" max="60" value="25" step="1" name="" id="timer-pomodoro">
                     </div>
                     <div class="minutes__short-brk">
                         <h3>Short Break</h3>
-                        <input type="number" min="1" value="5" step="1" name="" id="timer-short-brk">
+                        <input type="number" min="1" max="60" value="5" step="1" name="" id="timer-short-brk">
                     </div>
                     <div class="minutes__long-brk">
                         <h3>Long Break</h3>
-                        <input type="number" min="1" value="15" step="1" name="" id="timer-long-brk">
+                        <input type="number" min="1" max="60" value="15" step="1" name="" id="timer-long-brk">
                     </div>
                 </div>
             </div>
@@ -80,6 +77,13 @@
                 <hr>
                 <div class="auto__pomodoro">
                     <h2>Auto start Pomodoros?</h2>
+                    <div class="break__format">
+                        <div class="break__input"></div>
+                    </div>
+                </div>
+                <hr>
+                <div class="auto__form">
+                    <h2>Active 3D Pokemon?</h2>
                     <div class="break__format">
                         <div class="break__input"></div>
                     </div>
@@ -116,11 +120,9 @@
     <div class="pokemon-container">
         <div class="pokemon__window">
             <div class="pokemon__header">
-                <img id="close--pokemon-container" src="images/icons/remove-black-sm.svg" alt="">
+                <img id="close--pokemon-container" src="images/icons/remove-white-sm.svg" alt="">
             </div>
-            <div class="pokemon__image">
-                
-            </div>
+            <div class="pokemon__image"></div>
             <div class="pokemon__info">
                 <h1 id="pokemon--name"></h1>
                 <span id="pokemon--id"></span>
@@ -139,28 +141,16 @@
                 <span id="timer--number"></span>
             </div>
             <div class="pomodoro__buttons">
-                <button id="button__start">Start</button>
+                <button id="button--start">Start</button>
                 <div class="pomodoro__pokebola">
                    <img id="pokebola--icon" src="images/icons/pokebola-comum.svg" alt="Icon Pokebola">
                 </div>
-                <button id="button__stop">Stop</button>
+                <button id="button--stop">Stop</button>
             </div>
         </div>
     </div>
 
-    <audio src="./sound/rain.mp3" autoplay loop>
-
-    <script>
-        function setting(){
-            const root = document.documentElement;
-            root.style.setProperty('--setting', "flex")
-        }
-
-        function settingClose(){
-            const root = document.documentElement;
-            root.style.setProperty('--setting', "none")
-        }
-    </script>
+    <!--<audio src="./sound/rain.mp3" autoplay loop>-->
 
     <script type="module" src="./js/main.js"></script>
 </body>
