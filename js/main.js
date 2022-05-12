@@ -45,6 +45,7 @@ let short_brk = document.querySelector("#modes--short-brk")
 short_brk.addEventListener("click", timerShortBrk)
 let long_brk = document.querySelector("#modes--long-brk")
 long_brk.addEventListener("click", timerLongBrk)
+
 let pomodoro_option = false
 let short_brk_option = false
 let long_brk_option = false

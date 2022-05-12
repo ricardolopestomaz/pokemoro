@@ -15,26 +15,11 @@ function pull(){
         .then(response => response.json())
         .then(pokemon => {
             name = pokemon.name
-            img = pokemon.sprites.front_default
+            const img2D = `https://professorlotus.com/Sprites/sugimori/${name}.png`
             document.querySelector("#pokemon--name").innerHTML = `${name}`
             document.querySelector("#pokemon--id").innerHTML = `ID: ${id}`
-            console.log(`Nome: ${name}`)
-            console.log(`\nID: ${id}`)
-            console.log("\nimg: "+ img)
-
             document.querySelector(".pokemon__image").innerHTML = `
-            <img id="pokemon--img" src="${pokemon.sprites.front_default}" alt="Pokemon Image"/>
-            `
-
-            if(rare.includes(id) == true){
-                console.log('Raro')
-            }
-            else if(legendary.includes(id) == true){
-                console.log('Lendario')
-            }
-            else{
-                console.log('Comum')
-            }
+            <img id="pokemon--img" src="${img2D}" alt="Pokemon Image"/>`
         })
     }
     fetchPokemon()
