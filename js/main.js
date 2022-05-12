@@ -181,3 +181,5 @@ function openPokebola() {
         document.location.reload(true)
     })
 }
+
+openPokebola()
