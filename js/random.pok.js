@@ -10,16 +10,24 @@ let id = Math.floor(Math.random() * 151) + 1
 function pull(){
     const fetchPokemon = (name, img) => {
         const url = `https://pokeapi.co/api/v2/pokemon/${id}`
-
         fetch(url)
         .then(response => response.json())
         .then(pokemon => {
             name = pokemon.name
-            const img2D = `https://professorlotus.com/Sprites/sugimori/${name}.png`
+            const dimencion = true
+            let img
+            if(dimencion == false){
+                img = `https://professorlotus.com/Sprites/sugimori/${name}.png`
+            }
+            
+            else{
+                img = `https://professorlotus.com/Sprites/${name}.gif`
+            }
+
             document.querySelector("#pokemon--name").innerHTML = `${name}`
             document.querySelector("#pokemon--id").innerHTML = `ID: ${id}`
             document.querySelector(".pokemon__image").innerHTML = `
-            <img id="pokemon--img" src="${img2D}" alt="Pokemon Image"/>`
+            <img id="pokemon--img" src="${img}" alt="Pokemon Image"/>`
         })
     }
     fetchPokemon()
