@@ -38,19 +38,23 @@ function openSettings() {
 }
 
 function closeSettings() {
-    settings.style.display = "none"
     pomodoro_min = Number(document.querySelector("#timer-pomodoro").value)
     short_brk_min = Number(document.querySelector("#timer-short-brk").value)
     long_brk_min = Number(document.querySelector("#timer-long-brk").value)
-
-    if (pomodoro_option) {
-        timerPomodoro()
+    if (pomodoro_min <= 0 || pomodoro_min > 60 || short_brk_min <= 0 || short_brk_min > 60 || long_brk_min <= 0 || long_brk_min > 60) {
+        settings.style.display = "flex"
     }
-    else if (short_brk_option) {
-        timerShortBrk()
-    }
-    else if (long_brk_option) {
-        timerLongBrk()
+    else {
+        settings.style.display = "none"
+        if (pomodoro_option) {
+            timerPomodoro()
+        }
+        else if (short_brk_option) {
+            timerShortBrk()
+        }
+        else if (long_brk_option) {
+            timerLongBrk()
+        }
     }
 }
 
