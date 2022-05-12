@@ -1,9 +1,25 @@
 import './random.pok.js';
 
 //Onload Function
-
 window.addEventListener("load", onLoad => {
     timerPomodoro()
+})
+
+//Menu Hamburguer
+let active_menu = false
+let menu_hamburguer = document.querySelector("#checkbox--hamburguer")
+menu_hamburguer.addEventListener("click", activeMobileMenu => {
+    let nav_menu = document.querySelector(".menu__nav--opts")
+    if (!active_menu) {
+        active_menu = true
+        nav_menu.style.visibility = "visible"
+        nav_menu.style.height = "100vh"
+    }
+    else {
+        active_menu = false
+        nav_menu.style.visibility = "hidden"
+        nav_menu.style.height = "0vh"
+    }
 })
 
 //Settings
@@ -37,6 +53,54 @@ function closeSettings() {
         timerLongBrk()
     }
 }
+
+let break_active = false
+let break_format = document.querySelector("#break__format")
+break_format.addEventListener("click", autoBreak => {
+    let break_input = document.querySelector("#auto-start-break")
+    if (!break_active) {
+        break_active = true
+        break_input.style.transform = "translate(28px, 0px)"
+        break_format.style.backgroundColor = "rgb(30, 156, 30)"
+    }
+    else {
+        break_active = false
+        break_input.style.transform = "translate(0px, 0px)"
+        break_format.style.backgroundColor = "gray"
+    }
+})
+
+let pomodoro_active = false
+let pomodoro_format = document.querySelector("#pomodoro__format")
+pomodoro_format.addEventListener("click", autoPomodoro => {
+    let pomodoro_input = document.querySelector("#auto-start-pomodoro")
+    if (!pomodoro_active) {
+        pomodoro_active = true
+        pomodoro_input.style.transform = "translate(28px, 0px)"
+        pomodoro_format.style.backgroundColor = "rgb(30, 156, 30)"
+    }
+    else {
+        pomodoro_active = false
+        pomodoro_input.style.transform = "translate(0px, 0px)"
+        pomodoro_format.style.backgroundColor = "gray"
+    }
+})
+
+let three3d_active = false
+let format_3d = document.querySelector("#format__3d")
+format_3d.addEventListener("click", active3DPokemon => {
+    let input_3d = document.querySelector("#input-3d")
+    if (!three3d_active) {
+        three3d_active = true
+        input_3d.style.transform = "translate(28px, 0px)"
+        format_3d.style.backgroundColor = "rgb(30, 156, 30)"
+    }
+    else {
+        three3d_active = false
+        input_3d.style.transform = "translate(0px, 0px)"
+        format_3d.style.backgroundColor = "gray"
+    }
+})
 
 //Timer Options
 let pomodoro = document.querySelector("#modes--normal")
@@ -157,14 +221,20 @@ function runsTimer() {
 
     if (min==0 && sec==0) {
         clearInterval(timer)
-        let posi = 0
-        rotate_pokebola = setInterval(rotatePokebola => {
-            posi+=5
-
-            btn_pokebola.style.transform = `rotate(${posi}deg)`
-        }, 10)
-        btn_pokebola.addEventListener("click", openPokebola)
-        btn_pokebola.style.cursor = "pointer"
+        if (pomodoro_option) {
+            let posi = 0
+            rotate_pokebola = setInterval(rotatePokebola => {
+                posi+=5
+    
+                btn_pokebola.style.transform = `rotate(${posi}deg)`
+            }, 10)
+            btn_pokebola.addEventListener("click", openPokebola)
+            btn_pokebola.style.cursor = "pointer"
+        }
+        else {
+            timerPomodoro()
+            running_timer = false
+        }
     }
 }
 
