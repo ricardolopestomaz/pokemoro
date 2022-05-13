@@ -1,5 +1,47 @@
-import './random.pok.js';
+//RANDOM POKE
+//Rare
+const rare = [3,6,9,26,31,34,38,59,65,68,94,115,130,131,132,137,139,141,142,143,149]
+//Legendary
+const legendary = [144,145,146,150,151]
 
+// RANDOM POKEMON
+// PULL POKEMON
+let id = Math.floor(Math.random() * (151)) + 1
+function pull(min){
+    if(min <= 25){
+        if (rare.indexOf(id, 0)!=-1 || legendary.indexOf(id, 0)!=-1) {
+            id = Math.floor(Math.random() * (151)) + 1
+            pull(min)
+        }
+    }
+    else if (min <= 49){
+        if (legendary.indexOf(id, 0)!=-1) {
+            id = Math.floor(Math.random() * (151)) + 1
+            pull(min)
+        }
+    }
+    const fetchPokemon = () => {
+        const url = `https://pokeapi.co/api/v2/pokemon/${id}`
+        fetch(url)
+        .then(response => response.json())
+        .then(pokemon => {
+            let name = pokemon.name
+            let img
+            if(!three3d_active){
+                img = `https://professorlotus.com/Sprites/sugimori/${name}.png`
+            }
+            else{
+                img = `https://professorlotus.com/Sprites/${name}.gif`
+            }
+            document.querySelector("#pokemon--name").innerHTML = `${name}`
+            document.querySelector("#pokemon--id").innerHTML = `ID: ${id}`
+            document.querySelector(".pokemon__image").innerHTML = `
+            <img id="pokemon--img" src="${img}" alt="Pokemon Image"/>`
+        })
+    }
+    fetchPokemon()
+}
+pull()
 //Onload Function
 window.addEventListener("load", onLoad => {
     timerPomodoro()
@@ -14,11 +56,13 @@ menu_hamburguer.addEventListener("click", activeMobileMenu => {
         active_menu = true
         nav_menu.style.visibility = "visible"
         nav_menu.style.height = "100vh"
+        nav_menu.style.opacity = '1'
     }
     else {
         active_menu = false
-        nav_menu.style.visibility = "hidden"
+        nav_menu.style.visibility = "visible"
         nav_menu.style.height = "0vh"
+        nav_menu.style.opacity = '0'
     }
 })
 
@@ -104,6 +148,7 @@ format_3d.addEventListener("click", active3DPokemon => {
         input_3d.style.transform = "translate(0px, 0px)"
         format_3d.style.backgroundColor = "gray"
     }
+    console.log(three3d_active)
 })
 
 //Timer Options
@@ -244,6 +289,7 @@ function runsTimer() {
 
 function openPokebola() {
     clearInterval(rotate_pokebola)
+    let nome = pull(pomodoro_min)
     btn_pokebola.removeEventListener("click", openPokebola)
     btn_pokebola.style.cursor = "default"
     btn_pokebola.style.transform = `rotate(0deg)`
@@ -255,3 +301,5 @@ function openPokebola() {
         document.location.reload(true)
     })
 }
+
+btn_pokebola.addEventListener("click", openPokebola)
