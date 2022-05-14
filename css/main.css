@@ -35,7 +35,7 @@ body {
     background-size: cover;
     height: 99vh;
     position: relative;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 a, li {
@@ -238,7 +238,7 @@ hr {
 .alarm__name h2{
     font-size: 16px;
     color: var(--color-font-settings);
-    margin: 10px 0px 0px;
+    margin: 5px 0px 0px;
 }
 
 .alarm__config {
@@ -339,6 +339,13 @@ hr {
     border-radius: 5px;
     font-size: 16px;
     color: rgb(85, 85, 85);
+}
+
+.settings__save {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
 }
 
 /*============================= POKEMON CONTAINER =============================*/
@@ -605,15 +612,6 @@ hr {
     #menu__home {
         padding: 5px;
     }
-
-    .menu__nav--opts {
-        display: flex;
-        align-items: center;
-        position: relative;
-        height: 5vh;
-        width: 100%;
-        z-index: 1;
-    }
     
     .menu__links {
         padding: 4px 8px 4px 8px;
@@ -659,29 +657,33 @@ hr {
         padding: 0px 8px;
     }
 
-    .menu__nav {
-        position: relative;
-    }
-    
-    .menu__nav--opts {
-        display: block;
-        position: fixed;
-        left: 0px;
-        top: 60px;
-        height: 0vh;
-        width: 100vw;
-        z-index: 1000;
-        padding: 0px 30px;
-        transition: 0.1s ease-in;
+    .menu__dropdown {
         visibility: hidden;
-        overflow: hidden;
+        opacity: 0;
+    }
+
+    .menu__nav--opts {
+        position: absolute;
+        top: 8vh;
+        left: 0;
+        width: 96%;
+        z-index: 1000;
+        flex-direction: column;
+    }
+
+    .menu__nav--opts li {
+        width: 100%;
     }
 
     .menu__links {
+        background-color: var(--stop-button);
         font-size: 0.9em;
         padding: 4px 10px 4px 10px;
-        margin: 10px;
-        box-shadow:  2px 2px 3px 0px #00000047;
+        margin: 8px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     
     .menu__links > img {
@@ -723,20 +725,6 @@ hr {
 
     .menu__hamburguer label > span:nth-child(3) {
         top: 12px;
-    }
-
-    #checkbox--hamburguer:checked + label > span:nth-child(1) {
-        transform: rotate(-45deg);
-        top: 8px;
-    }
-
-    #checkbox--hamburguer:checked + label > span:nth-child(2) {
-        opacity: 0;
-    }
-
-    #checkbox--hamburguer:checked + label > span:nth-child(3) {
-        transform: rotate(45deg);
-        top: 8px;
     }
 
     .pomodoro {

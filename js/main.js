@@ -1,10 +1,6 @@
 //RANDOM POKE
-//Rare
 const rare = [3,6,9,26,31,34,38,59,65,68,94,115,130,131,132,137,139,141,142,143,149]
-//Legendary
 const legendary = [144,145,146,150,151]
-
-// RANDOM POKEMON
 // PULL POKEMON
 let id = Math.floor(Math.random() * (151)) + 1
 function pull(min){
@@ -42,29 +38,67 @@ function pull(min){
     fetchPokemon()
 }
 pull()
+
 //Onload Function
+let body = document.body
 window.addEventListener("load", onLoad => {
     timerPomodoro()
 })
 
 //Menu Hamburguer
+let verify_width
+let nav_menu = document.querySelector(".menu__dropdown")
 let active_menu = false
 let menu_hamburguer = document.querySelector("#checkbox--hamburguer")
-menu_hamburguer.addEventListener("click", activeMobileMenu => {
-    let nav_menu = document.querySelector(".menu__nav--opts")
+menu_hamburguer.addEventListener("click", activeMobileMenu)
+function activeMobileMenu() {
     if (!active_menu) {
         active_menu = true
+        hamburguerAnimation(true)
+        nav_menu.style.transition = "1s ease-in-out"
         nav_menu.style.visibility = "visible"
-        nav_menu.style.height = "100vh"
-        nav_menu.style.opacity = '1'
+        nav_menu.style.opacity = "1"
+        clearInterval(verify_width)
     }
     else {
         active_menu = false
-        nav_menu.style.visibility = "visible"
-        nav_menu.style.height = "0vh"
-        nav_menu.style.opacity = '0'
+        hamburguerAnimation(false)
+        nav_menu.style.transition = "1s ease-in-out"
+        nav_menu.style.visibility = "hidden"
+        nav_menu.style.opacity = "0"
+        verify_width = setInterval(verifyWidth, 100)
     }
-})
+}
+
+function hamburguerAnimation(check) {
+    let menu_bar1 = document.querySelector("#menu--bar1")
+    let menu_bar2 = document.querySelector("#menu--bar2")
+    let menu_bar3 = document.querySelector("#menu--bar3")
+    if (check) {
+        menu_bar1.setAttribute("style", "transform:rotate(-45deg);top:8px;")
+        menu_bar2.setAttribute("style", "opacity:0;")
+        menu_bar3.setAttribute("style", "transform:rotate(45deg);top:8px;")
+    }
+    else {
+        menu_bar1.setAttribute("style", "top:0px;")
+        menu_bar2.setAttribute("style", "top:6px;")
+        menu_bar3.setAttribute("style", "top:12px;")
+    }
+}
+
+function verifyWidth() {
+    let width = innerWidth
+    if (width > 600) {
+        nav_menu.style.transition = "none"
+        nav_menu.style.visibility = "visible"
+        nav_menu.style.opacity = "1"
+    }
+    else {
+        nav_menu.style.transition = "1s ease-in-out"
+        nav_menu.style.visibility = "hidden"
+        nav_menu.style.opacity = "0"
+    }
+}
 
 //Settings
 let btn_setting = document.querySelector("#btn--setting")
@@ -78,10 +112,16 @@ let short_brk_min = Number(document.querySelector("#timer-short-brk").value)
 let long_brk_min = Number(document.querySelector("#timer-long-brk").value)
 
 function openSettings() {
+    active_menu = true
+    activeMobileMenu()
     settings.style.display = "flex"
+    body.style.overflow = "hidden"
 }
 
 function closeSettings() {
+    let pomodoro_min_last = pomodoro_min
+    let short_brk_min_last = short_brk_min
+    let long_brk_min_last = long_brk_min
     pomodoro_min = Number(document.querySelector("#timer-pomodoro").value)
     short_brk_min = Number(document.querySelector("#timer-short-brk").value)
     long_brk_min = Number(document.querySelector("#timer-long-brk").value)
@@ -90,14 +130,16 @@ function closeSettings() {
     }
     else {
         settings.style.display = "none"
-        if (pomodoro_option) {
-            timerPomodoro()
-        }
-        else if (short_brk_option) {
-            timerShortBrk()
-        }
-        else if (long_brk_option) {
-            timerLongBrk()
+        if (pomodoro_min != pomodoro_min_last || short_brk_min != short_brk_min_last || long_brk_min != long_brk_min_last) {
+            if (pomodoro_option) {
+                timerPomodoro()
+            }
+            else if (short_brk_option) {
+                timerShortBrk()
+            }
+            else if (long_brk_option) {
+                timerLongBrk()
+            }
         }
     }
 }
@@ -162,53 +204,96 @@ long_brk.addEventListener("click", timerLongBrk)
 let pomodoro_option = false
 let short_brk_option = false
 let long_brk_option = false
+let confirme
 
 function timerPomodoro() {
     if (running_timer) {
-        alert("The timer is still running, are you sure you want to switch?")
+        confirme = confirm("The timer is still running, are you sure you want to switch?")
+        if (confirme) {
+            pomodoro.style.backgroundColor = "#1616167e"
+            short_brk.style.background = "none"
+            long_brk.style.background = "none"
+            pomodoro_option = true
+            short_brk_option = false
+            long_brk_option = false
+            min = pomodoro_min
+            sec = 0
+            pomodoroStop()
+            clockTimer(pomodoro_min)
+        }
     }
-    pomodoro.style.backgroundColor = "#1616167e"
-    short_brk.style.background = "none"
-    long_brk.style.background = "none"
-    pomodoro_option = true
-    short_brk_option = false
-    long_brk_option = false
-    min = pomodoro_min
-    sec = 0
-    pomodoroStop()
-    clockTimer(pomodoro_min)
+    else {
+        pomodoro.style.backgroundColor = "#1616167e"
+        short_brk.style.background = "none"
+        long_brk.style.background = "none"
+        pomodoro_option = true
+        short_brk_option = false
+        long_brk_option = false
+        min = pomodoro_min
+        sec = 0
+        pomodoroStop()
+        clockTimer(pomodoro_min)
+    }
 }
 
 function timerShortBrk() {
     if (running_timer) {
-        alert("The timer is still running, are you sure you want to switch?")
+        confirme = confirm("The timer is still running, are you sure you want to switch?")
+        if (confirme) {
+            short_brk.style.backgroundColor = "#1616167e"
+            pomodoro.style.background = "none"
+            long_brk.style.background = "none"
+            short_brk_option = true
+            pomodoro_option = false
+            long_brk_option = false
+            min = short_brk_min
+            sec = 0
+            pomodoroStop()
+            clockTimer(short_brk_min)
+        }
     }
-    short_brk.style.backgroundColor = "#1616167e"
-    pomodoro.style.background = "none"
-    long_brk.style.background = "none"
-    short_brk_option = true
-    pomodoro_option = false
-    long_brk_option = false
-    min = short_brk_min
-    sec = 0
-    pomodoroStop()
-    clockTimer(short_brk_min)
+    else {
+        short_brk.style.backgroundColor = "#1616167e"
+        pomodoro.style.background = "none"
+        long_brk.style.background = "none"
+        short_brk_option = true
+        pomodoro_option = false
+        long_brk_option = false
+        min = short_brk_min
+        sec = 0
+        pomodoroStop()
+        clockTimer(short_brk_min)
+    }
 }
 
 function timerLongBrk() {
     if (running_timer) {
-        alert("The timer is still running, are you sure you want to switch?")
+        confirme = confirm("The timer is still running, are you sure you want to switch?")
+        if (confirme) {
+            long_brk.style.backgroundColor = "#1616167e"
+            short_brk.style.background = "none"
+            pomodoro.style.background = "none"
+            long_brk_option = true
+            pomodoro_option = false
+            short_brk_option = false
+            min = long_brk_min
+            sec = 0
+            pomodoroStop()
+            clockTimer(long_brk_min)
+        }
     }
-    long_brk.style.backgroundColor = "#1616167e"
-    short_brk.style.background = "none"
-    pomodoro.style.background = "none"
-    long_brk_option = true
-    pomodoro_option = false
-    short_brk_option = false
-    min = long_brk_min
-    sec = 0
-    pomodoroStop()
-    clockTimer(long_brk_min)
+    else {
+        long_brk.style.backgroundColor = "#1616167e"
+        short_brk.style.background = "none"
+        pomodoro.style.background = "none"
+        long_brk_option = true
+        pomodoro_option = false
+        short_brk_option = false
+        min = long_brk_min
+        sec = 0
+        pomodoroStop()
+        clockTimer(long_brk_min)
+    }
 }
 
 //Relógio
