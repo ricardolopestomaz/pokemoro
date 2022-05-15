@@ -376,7 +376,6 @@ hr {
     padding: 5px;
     position: absolute;
     max-width: 200px;
-    z-index: 2000;
     top: 50px;
     left: -70px;
 }
