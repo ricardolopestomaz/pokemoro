@@ -63,6 +63,7 @@ a {
     font-size: 1.5em;
     margin: 15px;
     color: var(--color-font2);
+    text-shadow: 3px 3px 5px #00000078;
 }
 
 .header a img {
