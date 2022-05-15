@@ -2,8 +2,8 @@
 const rare = [3,6,9,26,31,34,38,59,65,68,94,115,130,131,132,137,139,141,142,143,149]
 const legendary = [144,145,146,150,151]
 // PULL POKEMON
-let id = Math.floor(Math.random() * (151)) + 1
 function pull(min){
+    let id = Math.floor(Math.random() * (151)) + 1
     if(min <= 25){
         if (rare.indexOf(id, 0)!=-1 || legendary.indexOf(id, 0)!=-1) {
             id = Math.floor(Math.random() * (151)) + 1
@@ -44,6 +44,16 @@ let body = document.body
 window.addEventListener("load", onLoad => {
     timerPomodoro()
 })
+
+//Background Timer
+let date = new Date()
+let hours = date.getHours()
+if (hours >= 6 && hours <= 18) {
+    body.style.backgroundImage = "url('../images/backgrounds/day/background-day2.gif')"
+}
+else {
+    body.style.backgroundImage = "url('../images/backgrounds/night/background-night1.gif')"
+}
 
 //Menu Hamburguer
 let verify_width
@@ -110,26 +120,27 @@ let settings = document.querySelector(".settings")
 let pomodoro_min = Number(document.querySelector("#timer-pomodoro").value)
 let short_brk_min = Number(document.querySelector("#timer-short-brk").value)
 let long_brk_min = Number(document.querySelector("#timer-long-brk").value)
+let repeat_value = Number(document.querySelector("#repeat-number").value)
+let min_values = setInterval(receiveValues, 10)
 
 function openSettings() {
-    active_menu = true
     activeMobileMenu()
     settings.style.display = "flex"
     body.style.overflow = "hidden"
+    receiveValues()
 }
 
 function closeSettings() {
     let pomodoro_min_last = pomodoro_min
     let short_brk_min_last = short_brk_min
     let long_brk_min_last = long_brk_min
-    pomodoro_min = Number(document.querySelector("#timer-pomodoro").value)
-    short_brk_min = Number(document.querySelector("#timer-short-brk").value)
-    long_brk_min = Number(document.querySelector("#timer-long-brk").value)
-    if (pomodoro_min <= 0 || pomodoro_min > 60 || short_brk_min <= 0 || short_brk_min > 60 || long_brk_min <= 0 || long_brk_min > 60) {
+    if (pomodoro_min < 10 || pomodoro_min > 60 || short_brk_min < 1 || short_brk_min > 60 || long_brk_min < 5 || long_brk_min > 60) {
         settings.style.display = "flex"
     }
     else {
+        clearInterval(min_values)
         settings.style.display = "none"
+        body.style.overflow = "visible"
         if (pomodoro_min != pomodoro_min_last || short_brk_min != short_brk_min_last || long_brk_min != long_brk_min_last) {
             if (pomodoro_option) {
                 timerPomodoro()
@@ -144,6 +155,42 @@ function closeSettings() {
     }
 }
 
+function receiveValues() {
+    repeat_value = Number(document.querySelector("#repeat-number").value)
+    pomodoro_min = Number(document.querySelector("#timer-pomodoro").value)
+    short_brk_min = Number(document.querySelector("#timer-short-brk").value)
+    long_brk_min = Number(document.querySelector("#timer-long-brk").value)
+    let pomodoro_alert = document.querySelector(".minutes__pomodoro--alert")
+    let short_brk_alert = document.querySelector(".minutes__short-brk--alert")
+    let long_brk_alert = document.querySelector(".minutes__long-brk--alert")
+    let repeat_alert = document.querySelector(".alarm__repeat--alert")
+    if (repeat_value < 1 || repeat_value > 60) {
+        repeat_alert.style.display = "flex"
+    }
+    else {
+        repeat_alert.style.display = "none"
+    }
+    if (pomodoro_min < 10 || pomodoro_min > 60) {
+        pomodoro_alert.style.display = "flex"
+    }
+    else {
+        pomodoro_alert.style.display = "none"
+    }
+    if (short_brk_min < 1 || short_brk_min > 60) {
+        short_brk_alert.style.display = "flex"
+    }
+    else {
+        short_brk_alert.style.display = "none"
+    }
+    if (long_brk_min < 5 || long_brk_min > 60) {
+        long_brk_alert.style.display = "flex"
+    }
+    else {
+        long_brk_alert.style.display = "none"
+    }
+}
+
+//Active Buttons Settings
 let break_active = false
 let break_format = document.querySelector("#break__format")
 break_format.addEventListener("click", autoBreak => {
@@ -190,8 +237,39 @@ format_3d.addEventListener("click", active3DPokemon => {
         input_3d.style.transform = "translate(0px, 0px)"
         format_3d.style.backgroundColor = "gray"
     }
-    console.log(three3d_active)
 })
+
+//Alarm Sounds Settings
+let alarm_dropdown = document.querySelector(".alarm__dropdown")
+let dropdown_active = false
+let alarm_input = document.querySelector(".alarm__input")
+alarm_input.addEventListener("click", alarmDropdown => {
+    if (dropdown_active) {
+        alarm_dropdown.style.display = "none"
+        dropdown_active = false
+    }
+    else {
+        alarm_dropdown.style.display = "block"
+        dropdown_active = true
+    }
+})
+
+let alarm_active = document.querySelector("#alarm--active")
+let alarm_options  = document.querySelectorAll("div#fire-red--alarm, div#kitchen--alarm")
+alarm_active.innerHTML = alarm_options[0].innerHTML
+for (let i=0; i<alarm_options.length; i++) {
+    alarm_options[i].addEventListener("click", chooseAlarm => {
+        alarm_active.innerHTML = alarm_options[i].innerHTML
+    })
+}
+
+let volume_bar = document.querySelector("#volume--bar")
+let volume_value = document.querySelector("#volume--value")
+volume_value.innerHTML = volume_bar.value
+setInterval(volumeSound, 1)
+function volumeSound() {
+    volume_value.innerHTML = volume_bar.value
+}
 
 //Timer Options
 let pomodoro = document.querySelector("#modes--normal")
@@ -231,6 +309,10 @@ function timerPomodoro() {
         long_brk_option = false
         min = pomodoro_min
         sec = 0
+        clearInterval(rotate_pokebola)
+        btn_pokebola.removeEventListener("click", openPokebola)
+        btn_pokebola.style.cursor = "default"
+        btn_pokebola.style.transform = `rotate(0deg)`
         pomodoroStop()
         clockTimer(pomodoro_min)
     }
@@ -261,6 +343,10 @@ function timerShortBrk() {
         long_brk_option = false
         min = short_brk_min
         sec = 0
+        clearInterval(rotate_pokebola)
+        btn_pokebola.removeEventListener("click", openPokebola)
+        btn_pokebola.style.cursor = "default"
+        btn_pokebola.style.transform = `rotate(0deg)`
         pomodoroStop()
         clockTimer(short_brk_min)
     }
@@ -291,6 +377,10 @@ function timerLongBrk() {
         short_brk_option = false
         min = long_brk_min
         sec = 0
+        clearInterval(rotate_pokebola)
+        btn_pokebola.removeEventListener("click", openPokebola)
+        btn_pokebola.style.cursor = "default"
+        btn_pokebola.style.transform = `rotate(0deg)`
         pomodoroStop()
         clockTimer(long_brk_min)
     }
@@ -355,11 +445,11 @@ function runsTimer() {
 
     if (min==0 && sec==0) {
         clearInterval(timer)
+        running_timer = false
         if (pomodoro_option) {
             let posi = 0
             rotate_pokebola = setInterval(rotatePokebola => {
                 posi+=5
-    
                 btn_pokebola.style.transform = `rotate(${posi}deg)`
             }, 10)
             btn_pokebola.addEventListener("click", openPokebola)
@@ -367,14 +457,17 @@ function runsTimer() {
         }
         else {
             timerPomodoro()
-            running_timer = false
+            if (pomodoro_active) {
+                pomodoroStart()
+            }
         }
     }
 }
 
+let count_breaks = 0
 function openPokebola() {
     clearInterval(rotate_pokebola)
-    let nome = pull(pomodoro_min)
+    pull(pomodoro_min)
     btn_pokebola.removeEventListener("click", openPokebola)
     btn_pokebola.style.cursor = "default"
     btn_pokebola.style.transform = `rotate(0deg)`
@@ -382,9 +475,18 @@ function openPokebola() {
     pokemon_container.style.display = "flex"
     let close_container = document.querySelector("#close--pokemon-container")
     close_container.addEventListener("click", closePoketainer => {
+        running_timer = false
         pokemon_container.style.display = "none"
-        document.location.reload(true)
+        if (count_breaks < 4) {
+            timerShortBrk()
+            count_breaks++
+        }
+        else {
+            timerLongBrk()
+            count_breaks = 0
+        }
+        if (break_active) {
+            pomodoroStart()
+        }
     })
 }
-
-btn_pokebola.addEventListener("click", openPokebola)

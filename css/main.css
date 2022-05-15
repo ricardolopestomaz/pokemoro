@@ -10,6 +10,7 @@
     --stop-button: rgb(36, 36, 36);
     --box-timer: #1616167e;
     --box-timer-active: #1616167e;
+    --box-alert: #3327007e;
 
     /*============================= FONT VARIABLES =============================*/
     --font: 'Open Sans', sans-serif;
@@ -195,6 +196,31 @@ hr {
     font-size: 16px;
 }
 
+.settings__minutes--inputs img {
+    width: 20px;
+    opacity: 0.8;
+    margin-right: 5px;
+}
+
+.minutes__pomodoro--alert, .minutes__short-brk--alert, .minutes__long-brk--alert {
+    display: none;
+    background-color: var(--background);
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 4px 4px 4px 1px #00000033;
+    padding: 5px;
+    position: absolute;
+    max-width: 100px;
+    z-index: 2000;
+    top: 180px;
+}
+
+.minutes__pomodoro--alert, .minutes__short-brk--alert, .minutes__long-brk--alert p {
+    font-size: 0.7em;
+    color: var(--color-font-settings);
+    text-align: center;
+}
+
 .settings__auto h2{
     font-size: 16px;
     color: var(--color-font-settings);
@@ -322,6 +348,7 @@ hr {
 .alarm__repeat {
     display: flex;
     align-items: center;
+    position: relative;
 }
 
 .alarm__repeat span {
@@ -341,13 +368,31 @@ hr {
     color: rgb(85, 85, 85);
 }
 
-.settings__save {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 15px;
+.alarm__repeat--alert {
+    display: none;
+    background-color: var(--background);
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 4px 4px 4px 1px #00000033;
+    padding: 5px;
+    position: absolute;
+    max-width: 200px;
+    z-index: 2000;
+    top: 50px;
+    left: -70px;
 }
 
+.alarm__repeat--alert img{
+    width: 20px;
+    opacity: 0.8;
+    margin-right: 5px;
+}
+
+.alarm__repeat--alert p {
+    font-size: 0.7em;
+    color: var(--color-font-settings);
+    text-align: center;
+}
 /*============================= POKEMON CONTAINER =============================*/
 
 .pokemon-container {
@@ -373,7 +418,10 @@ hr {
 
 .pokemon__header {
     align-self: baseline;
-    margin: 0px 30px;
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-start;
+    margin: 30px 30px;
 }
 
 .pokemon__header > img {
@@ -666,7 +714,7 @@ hr {
         position: absolute;
         top: 8vh;
         left: 0;
-        width: 96%;
+        width: 96.5%;
         z-index: 1000;
         flex-direction: column;
     }
@@ -814,6 +862,27 @@ hr {
         padding: 10px 5px;
         font-size: 15px;
     }
+
+    .minutes__pomodoro--alert, .minutes__short-brk--alert, .minutes__long-brk--alert {
+        top: 160px;
+        width: 100px;
+    }
+
+    .minutes__pomodoro--alert, .minutes__short-brk--alert, .minutes__long-brk--alert p{
+        font-size: 0.7em;
+    }
+
+    .minutes__pomodoro--alert {
+        left: 10px;
+    }
+
+    .minutes__short-brk--alert {
+        left: 120px;
+    }
+
+    .minutes__long-brk--alert {
+        left: 230px;
+    }
     
     .settings__auto h2{
         font-size: 15px;
@@ -877,6 +946,19 @@ hr {
         max-width: 80px;
         padding: 8px 5px;
         font-size: 15px;
+    }
+
+    .alarm__repeat--alert {
+        top: 40px;
+        left: -70px;
+    }
+    
+    .alarm__repeat--alert img{
+        width: 20px;
+    }
+    
+    .alarm__repeat--alert p {
+        font-size: 0.6em;
     }
 }
 
@@ -1025,6 +1107,27 @@ hr {
         padding: 5px 5px;
         font-size: 14px;
     }
+
+    .minutes__pomodoro--alert, .minutes__short-brk--alert, .minutes__long-brk--alert {
+        top: 150px;
+        width: 90px;
+    }
+
+    .minutes__pomodoro--alert, .minutes__short-brk--alert, .minutes__long-brk--alert p{
+        font-size: 0.6em;
+    }
+
+    .minutes__pomodoro--alert {
+        left: -9px;
+    }
+
+    .minutes__short-brk--alert {
+        left: 95px;
+    }
+
+    .minutes__long-brk--alert {
+        left: 200px;
+    }
     
     .settings__auto h2{
         font-size: 15px;
@@ -1052,5 +1155,10 @@ hr {
         max-width: 70px;
         padding: 6px 5px;
         font-size: 14px;
+    }
+
+    .alarm__repeat--alert {
+        top: 35px;
+        left: -80px;
     }
 }
