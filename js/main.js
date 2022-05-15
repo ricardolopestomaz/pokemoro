@@ -45,6 +45,16 @@ window.addEventListener("load", onLoad => {
     timerPomodoro()
 })
 
+//Background
+let date = new Date()
+let hours = date.getHours()
+if (hours >= 6 && hours < 18) {
+    body.style.backgroundImage = "url(images/backgrounds/day/background-day2.gif)"
+}
+else {
+    body.style.backgroundImage = "url('images/backgrounds/night/background-night1.gif')"
+}
+
 //Menu Hamburguer
 let verify_width
 let nav_menu = document.querySelector(".menu__dropdown")
