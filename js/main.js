@@ -49,10 +49,10 @@ window.addEventListener("load", onLoad => {
 let date = new Date()
 let hours = date.getHours()
 if (hours >= 6 && hours < 18) {
-    body.style.backgroundImage = "url(images/backgrounds/day/background-day2.gif)"
+    body.style.backgroundImage = "url('../images/backgrounds/day/background-day2.gif')"
 }
 else {
-    body.style.backgroundImage = "url('images/backgrounds/night/background-night1.gif')"
+    body.style.backgroundImage = "url('../images/backgrounds/night/background-night1.gif')"
 }
 
 //Menu Hamburguer
