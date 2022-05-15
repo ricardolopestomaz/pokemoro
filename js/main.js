@@ -134,7 +134,7 @@ function closeSettings() {
     let pomodoro_min_last = pomodoro_min
     let short_brk_min_last = short_brk_min
     let long_brk_min_last = long_brk_min
-    if (pomodoro_min < 10 || pomodoro_min > 60 || short_brk_min < 1 || short_brk_min > 60 || long_brk_min < 5 || long_brk_min > 60 || repeat_value < 1 || repeat_value > 60) {
+    if (pomodoro_min < 10 || pomodoro_min > 60 || short_brk_min < 1 || short_brk_min > 30 || long_brk_min < 15 || long_brk_min > 60 || repeat_value < 1 || repeat_value > 100) {
         settings.style.display = "flex"
     }
     else {
@@ -164,7 +164,7 @@ function receiveValues() {
     let short_brk_alert = document.querySelector(".minutes__short-brk--alert")
     let long_brk_alert = document.querySelector(".minutes__long-brk--alert")
     let repeat_alert = document.querySelector(".alarm__repeat--alert")
-    if (repeat_value < 1 || repeat_value > 60) {
+    if (repeat_value < 1 || repeat_value > 100) {
         repeat_alert.style.display = "flex"
     }
     else {
@@ -176,13 +176,13 @@ function receiveValues() {
     else {
         pomodoro_alert.style.display = "none"
     }
-    if (short_brk_min < 1 || short_brk_min > 60) {
+    if (short_brk_min < 1 || short_brk_min > 30) {
         short_brk_alert.style.display = "flex"
     }
     else {
         short_brk_alert.style.display = "none"
     }
-    if (long_brk_min < 5 || long_brk_min > 60) {
+    if (long_brk_min < 15 || long_brk_min > 60) {
         long_brk_alert.style.display = "flex"
     }
     else {
