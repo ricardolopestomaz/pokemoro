@@ -37,5 +37,16 @@
             <a href="sign.html">Create account</a>
         </aside>
     </div>
+    <script>
+        let body = document.body
+        let date = new Date()
+        let hours = date.getHours()
+        if (hours >= 6 && hours <= 18) {
+            body.style.backgroundImage = "url('../images/backgrounds/day/background-day2.gif')"
+        }
+        else {
+            body.style.backgroundImage = "url('../images/backgrounds/night/background-night1.gif')"
+        }
+    </script>
 </body>
 </html>
