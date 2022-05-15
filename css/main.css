@@ -302,6 +302,7 @@ hr {
     box-shadow: 2px 2px 5px 2px #00000026;
     cursor: default;
     min-width: 150px;
+    z-index: 1000;
 }
 
 .alarm__dropdown div {
