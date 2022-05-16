@@ -121,19 +121,22 @@ let pomodoro_min = Number(document.querySelector("#timer-pomodoro").value)
 let short_brk_min = Number(document.querySelector("#timer-short-brk").value)
 let long_brk_min = Number(document.querySelector("#timer-long-brk").value)
 let repeat_value = Number(document.querySelector("#repeat-number").value)
+let pomodoro_min_last
+let short_brk_min_last
+let long_brk_min_last
 let min_values
 
 function openSettings() {
     activeMobileMenu()
     settings.style.display = "flex"
     body.style.overflow = "hidden"
+    pomodoro_min_last = pomodoro_min
+    short_brk_min_last = short_brk_min
+    long_brk_min_last = long_brk_min
     min_values = setInterval(receiveValues, 1)
 }
 
 function closeSettings() {
-    let pomodoro_min_last = pomodoro_min
-    let short_brk_min_last = short_brk_min
-    let long_brk_min_last = long_brk_min
     if (pomodoro_min < 10 || pomodoro_min > 60 || short_brk_min < 1 || short_brk_min > 30 || long_brk_min < 15 || long_brk_min > 60 || repeat_value < 1 || repeat_value > 100) {
         settings.style.display = "flex"
     }
