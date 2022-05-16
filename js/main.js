@@ -6,13 +6,11 @@ function pull(min){
     let id = Math.floor(Math.random() * (151)) + 1
     if(min <= 25){
         if (rare.indexOf(id, 0)!=-1 || legendary.indexOf(id, 0)!=-1) {
-            id = Math.floor(Math.random() * (151)) + 1
             pull(min)
         }
     }
     else if (min <= 49){
         if (legendary.indexOf(id, 0)!=-1) {
-            id = Math.floor(Math.random() * (151)) + 1
             pull(min)
         }
     }
