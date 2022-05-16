@@ -35,6 +35,7 @@ function pull(min){
     }
     fetchPokemon()
 }
+pull()
 
 //Onload Function
 let body = document.body
