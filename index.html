@@ -7,22 +7,21 @@
     <title>Pokemoro - Pomodoro Timer with Pokemon</title>
     <link rel="shortcut icon" href="images/icons/pokebola-comum.svg" type="image/x-icon">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/medias/media-main.css">
 </head>
 <body>
     <!--============================= HEADER =============================-->
     <header class="header">
         <nav class="header__menu">
             <div class="menu__logo">
-                <h1><a href="#" id="menu__home"><img src="images/icons/pokebola-comum.svg" alt="Icon Pokebola">Pokemoro</a></h1>
+                <h1><a href="index.html" id="menu__home"><img src="images/icons/pokebola-comum.svg" alt="Icon Pokebola">Pokemoro</a></h1>
             </div>
             <div class="menu__nav">
                 <div class="menu__hamburguer">
                     <input type="checkbox" name="" id="checkbox--hamburguer">
                     <label for="checkbox--hamburguer">
-                        <span></span>
-                        <span></span>
-                        <span></span>
+                        <span id="menu--bar1"></span>
+                        <span id="menu--bar2"></span>
+                        <span id="menu--bar3"></span>
                     </label>
                 </div>
                 <div class="menu__dropdown">
@@ -53,16 +52,28 @@
                 <h2>Time (minutes)</h2>
                 <div class="settings__minutes--inputs">
                     <div class="minutes__pomodoro">
+                        <div class="minutes__pomodoro--alert">
+                            <img src="images/icons/warning-outline.svg" alt="Warning">
+                            <p>The value must be higher or equal to 10 and less than or equal to 60!</p>
+                        </div>
                         <h3>Pomodoro</h3>
                         <input type="number" min="10" max="60" value="25" step="1" name="" id="timer-pomodoro">
                     </div>
                     <div class="minutes__short-brk">
+                        <div class="minutes__short-brk--alert">
+                            <img src="images/icons/warning-outline.svg" alt="Warning">
+                            <p>The value must be higher or equal to 1 and less than or equal to 30!</p>
+                        </div>
                         <h3>Short Break</h3>
-                        <input type="number" min="1" max="60" value="5" step="1" name="" id="timer-short-brk">
+                        <input type="number" min="1" max="30" value="5" step="1" name="" id="timer-short-brk">
                     </div>
                     <div class="minutes__long-brk">
+                        <div class="minutes__long-brk--alert">
+                            <img src="images/icons/warning-outline.svg" alt="Warning">
+                            <p>The value must be higher or equal to 15 and less than or equal to 60!</p>
+                        </div>
                         <h3>Long Break</h3>
-                        <input type="number" min="1" max="60" value="15" step="1" name="" id="timer-long-brk">
+                        <input type="number" min="15" max="60" value="15" step="1" name="" id="timer-long-brk">
                     </div>
                 </div>
             </div>
@@ -70,22 +81,22 @@
             <div class="settings__auto">
                 <div class="auto__break">
                     <h2>Auto start Breaks?</h2>
-                    <div class="break__format">
-                        <div class="break__input"></div>
+                    <div id="break__format" class="active__format">
+                        <div class="active__input" id="auto-start-break"></div>
                     </div>
                 </div>
                 <hr>
                 <div class="auto__pomodoro">
                     <h2>Auto start Pomodoros?</h2>
-                    <div class="break__format">
-                        <div class="break__input"></div>
+                    <div id="pomodoro__format" class="active__format">
+                        <div class="active__input" id="auto-start-pomodoro"></div>
                     </div>
                 </div>
                 <hr>
                 <div class="auto__form">
                     <h2>Active 3D Pokemon?</h2>
-                    <div class="break__format">
-                        <div class="break__input"></div>
+                    <div id="format__3d" class="active__format">
+                        <div class="active__input" id="input-3d"></div>
                     </div>
                 </div>
             </div>
@@ -97,7 +108,7 @@
                 <div class="alarm__config">
                     <div class="alarm__type">
                         <div class="alarm__input">
-                            <span>Fire Red</span>
+                            <span id="alarm--active"></span>
                             <img src="images/icons/down-arrow-black.png" alt="Icon Down Arrow">
                             <div class="alarm__dropdown">
                                 <div id="fire-red--alarm">Fire Red</div>
@@ -106,12 +117,16 @@
                         </div>
                     </div>
                     <div class="alarm__sound">
-                        <span>0</span>
-                        <input type="range" min="0" max="100" value="0" name="" id="">
+                        <span id="volume--value"></span>
+                        <input type="range" min="0" max="100" value="50" name="" id="volume--bar">
                     </div>
                     <div class="alarm__repeat">
                         <span>repeat</span>
-                        <input type="number" name="" id="repeat-number" value="1">
+                        <input type="number" name="" id="repeat-number" value="1" min="1" max="100" step="1">
+                        <div class="alarm__repeat--alert">
+                            <img src="images/icons/warning-outline.svg" alt="Warning">
+                            <p>The value must be higher or equal to 1 and less than or equal to 100!</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -152,6 +167,6 @@
 
     <!--<audio src="./sound/rain.mp3" autoplay loop>-->
 
-    <script type="module" src="./js/main.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
