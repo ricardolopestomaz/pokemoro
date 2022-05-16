@@ -137,7 +137,7 @@ function openSettings() {
 }
 
 function closeSettings() {
-    if (pomodoro_min < 10 || pomodoro_min > 60 || short_brk_min < 1 || short_brk_min > 30 || long_brk_min < 15 || long_brk_min > 60 || repeat_value < 1 || repeat_value > 100) {
+    if (pomodoro_min < 1 || pomodoro_min > 60 || short_brk_min < 1 || short_brk_min > 30 || long_brk_min < 15 || long_brk_min > 60 || repeat_value < 1 || repeat_value > 100) {
         settings.style.display = "flex"
     }
     else {
@@ -173,7 +173,7 @@ function receiveValues() {
     else {
         repeat_alert.style.display = "none"
     }
-    if (pomodoro_min < 10 || pomodoro_min > 60) {
+    if (pomodoro_min < 1 || pomodoro_min > 60) {
         pomodoro_alert.style.display = "flex"
     }
     else {
