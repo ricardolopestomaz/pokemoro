@@ -3,7 +3,7 @@ const rare = [3,6,9,26,31,34,38,59,65,68,94,115,130,131,132,137,139,141,142,143,
 const legendary = [144,145,146,150,151]
 // PULL POKEMON
 
-let id = Math.floor(Math.random() * (151)) + 1
+let id
 function pull(min){
     id = Math.floor(Math.random() * (151)) + 1
     if(min <= 25){
@@ -21,6 +21,8 @@ function pull(min){
         fetch(url)
             .then(response => response.json())
             .then(pokemon => {
+                console.log(pokemon)
+                const types = pokemon.types.map(typeInfo => typeInfo.type.name)
                 let name = pokemon.name
                 let img
                 if (!three3d_active) {
@@ -31,6 +33,7 @@ function pull(min){
                 }
                 document.querySelector("#pokemon--name").innerHTML = `${name}`
                 document.querySelector("#pokemon--id").innerHTML = `ID: ${id}`
+                document.querySelector("#pokemon--types").innerHTML = `${types.join(' | ')}`
                 document.querySelector(".pokemon__image").innerHTML = `
             <img id="pokemon--img" src="${img}" alt="Pokemon Image"/>`
             })
