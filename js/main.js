@@ -25,6 +25,7 @@ function pull(min){
                 const types = pokemon.types.map(typeInfo => typeInfo.type.name)
                 let name = pokemon.name
                 let img
+                let soundPokemon = `https://play.pokemonshowdown.com/audio/cries/${name}.mp3`
                 if (!three3d_active) {
                     img = `https://professorlotus.com/Sprites/sugimori/${name}.png`
                 }
@@ -35,7 +36,9 @@ function pull(min){
                 document.querySelector("#pokemon--id").innerHTML = `ID: ${id}`
                 document.querySelector("#pokemon--types").innerHTML = `${types.join(' | ')}`
                 document.querySelector(".pokemon__image").innerHTML = `
-            <img id="pokemon--img" src="${img}" alt="Pokemon Image"/>`
+                <img id="pokemon--img" src="${img}" alt="Pokemon Image"/>`
+                let audioElement = new Audio(soundPokemon)
+                audioElement.play()
             })
     }
     fetchPokemon()
