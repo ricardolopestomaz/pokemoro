@@ -607,3 +607,4 @@ function openPokebola() {
         }
     })
 }
+openPokebola()
