@@ -51,14 +51,13 @@ function pull(min) {
                 document.querySelector(".pokemon__image").innerHTML = `
                 <img id="pokemon--img" src="${img}" alt="Pokemon Image"/>`
                 document.querySelector("#pokemon--name").innerHTML = `${name}`
-                types_len = types.length
-                if (types_len==2) {
+                if (types.length==2) {
                     let pokemon_types = document.querySelector(".pokemon__types")
                     box.setAttribute("class", "pokemon--types")
                     pokemon_types.appendChild(box)
                 }
                 let box_types = document.querySelectorAll(".pokemon--types")
-                for (let i=0; i<types_len; i++) {
+                for (let i=0; i<types.length; i++) {
                     if (types[i]=="electric") {
                         box_types[i].style.color = "black"
                         box_types[i].style.backgroundColor = "#EED535"
@@ -150,9 +149,6 @@ function pull(min) {
                         box_types[i].innerHTML = `${types[i]}`
                     }
                 }
-                let audioElement = new Audio(soundPokemon)
-                console.log(audioElement)
-                audioElement.play()
             })
     }
 }
