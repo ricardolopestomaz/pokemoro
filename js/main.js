@@ -1,47 +1,160 @@
 //RANDOM POKE
-const rare = [3,6,9,26,31,34,38,59,65,68,94,115,130,131,132,137,139,141,142,143,149]
-const legendary = [144,145,146,150,151]
-// PULL POKEMON
+const rare = [3,6,9,26,31,34,38,45,59,62,65,68,71,76,94,115,131,132,137,139,141,142,143,149,154,157,160,169,175,176,181,201,208,212,214,227,230,233,242,248,254,257,260,272,275,282,286,289,292,295,306,319,321,330,334,357,365,373,376]
+const legendary = [144,145,146,150,151,243,244,245,249,250,251,377,378,379,380,381,382,383,384,385,386]
 
+// PULL POKEMON
 let id
-function pull(min){
-    id = Math.floor(Math.random() * (151)) + 1
-    if(min <= 25){
+function pull(min) {
+    let box = document.createElement("div")
+    id = Math.floor(Math.random() * (386)) + 1
+    if(min <= 25) {
         if (rare.indexOf(id, 0)!= - 1 || legendary.indexOf(id, 0)!= - 1) {
             pull(min)
         }
+        else {
+            fetchPokemon()
+        }
     }
-    else if (min >= 26 & min <= 49){
+    else if (min >= 26 & min <= 49) {
         if (legendary.indexOf(id, 0)!= - 1) {
             pull(min)
         }
+        else {
+            fetchPokemon()
+        }
+    }
+    else {
+        fetchPokemon()
     }
     function fetchPokemon() {
         const url = `https://pokeapi.co/api/v2/pokemon/${id}`
         fetch(url)
             .then(response => response.json())
             .then(pokemon => {
-                console.log(pokemon)
                 const types = pokemon.types.map(typeInfo => typeInfo.type.name)
                 let name = pokemon.name
                 let img
                 let soundPokemon = `https://play.pokemonshowdown.com/audio/cries/${name}.mp3`
                 if (!three3d_active) {
-                    img = `https://professorlotus.com/Sprites/sugimori/${name}.png`
+                    if (id<=9) {
+                        id = `00${id}`
+                    }
+                    else if (id<=99) {
+                        id = `0${id}`
+                    }
+                    img = `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${id}.png`
                 }
                 else {
                     img = `https://professorlotus.com/Sprites/${name}.gif`
                 }
-                document.querySelector("#pokemon--name").innerHTML = `${name}`
                 document.querySelector("#pokemon--id").innerHTML = `ID: ${id}`
-                document.querySelector("#pokemon--types").innerHTML = `${types.join(' | ')}`
                 document.querySelector(".pokemon__image").innerHTML = `
                 <img id="pokemon--img" src="${img}" alt="Pokemon Image"/>`
+                document.querySelector("#pokemon--name").innerHTML = `${name}`
+                types_len = types.length
+                if (types_len==2) {
+                    let pokemon_types = document.querySelector(".pokemon__types")
+                    box.setAttribute("class", "pokemon--types")
+                    pokemon_types.appendChild(box)
+                }
+                let box_types = document.querySelectorAll(".pokemon--types")
+                for (let i=0; i<types_len; i++) {
+                    if (types[i]=="electric") {
+                        box_types[i].style.color = "black"
+                        box_types[i].style.backgroundColor = "#EED535"
+                        box_types[i].innerHTML = `${types[i]}`
+                    }
+                    else if (types[i]=="grass") {
+                        box_types[i].style.color = "black"
+                        box_types[i].style.backgroundColor = "#729F3F"
+                        box_types[i].innerHTML = `${types[i]}`
+                    }
+                    else if (types[i]=="bug") {
+                        box_types[i].style.color = "white"
+                        box_types[i].style.backgroundColor = "#729F3F"
+                        box_types[i].innerHTML = `${types[i]}`
+                    }
+                    else if (types[i]=="dark") {
+                        box_types[i].style.color = "white"
+                        box_types[i].style.backgroundColor = "#585978"
+                        box_types[i].innerHTML = `${types[i]}`
+                    }
+                    else if (types[i]=="dragon") {
+                        box_types[i].style.color = "white"
+                        box_types[i].style.background = "linear-gradient(to bottom, #53A4CF 0%, #53A4CF 50%, #F16E57 51%, #F16E57 100%)"
+                        box_types[i].innerHTML = `${types[i]}`
+                    }
+                    else if (types[i]=="fairy") {
+                        box_types[i].style.color = "black"
+                        box_types[i].style.backgroundColor = "#FDB9E9"
+                        box_types[i].innerHTML = `${types[i]}`
+                    }
+                    else if (types[i]=="fighting") {
+                        box_types[i].style.color = "white"
+                        box_types[i].style.backgroundColor = "#E3612F"
+                        box_types[i].innerHTML = `${types[i]}`
+                    }
+                    else if (types[i]=="fire") {
+                        box_types[i].style.color = "white"
+                        box_types[i].style.backgroundColor = "#FD7D24"
+                        box_types[i].innerHTML = `${types[i]}`
+                    }
+                    else if (types[i]=="flying") {
+                        box_types[i].style.color = "black"
+                        box_types[i].style.background = "linear-gradient(to bottom, #3DC7EF 0%, #3DC7EF 50%, #39C294 51%, #39C294 100%)"
+                        box_types[i].innerHTML = `${types[i]}`
+                    }
+                    else if (types[i]=="ghost") {
+                        box_types[i].style.color = "white"
+                        box_types[i].style.backgroundColor = "#946994"
+                        box_types[i].innerHTML = `${types[i]}`
+                    }
+                    else if (types[i]=="ground") {
+                        box_types[i].style.color = "black"
+                        box_types[i].style.background = "linear-gradient(to bottom, #F7DE3F 0%, #F7DE3F 50%, #AB9842 51%, #AB9842 100%)"
+                        box_types[i].innerHTML = `${types[i]}`
+                    }
+                    else if (types[i]=="ice") {
+                        box_types[i].style.color = "black"
+                        box_types[i].style.backgroundColor = "#B97FC9"
+                        box_types[i].innerHTML = `${types[i]}`
+                    }
+                    else if (types[i]=="normal") {
+                        box_types[i].style.color = "black"
+                        box_types[i].style.backgroundColor = "#A4ACAF"
+                        box_types[i].innerHTML = `${types[i]}`
+                    }
+                    else if (types[i]=="poison") {
+                        box_types[i].style.color = "white"
+                        box_types[i].style.backgroundColor = "#9867E4"
+                        box_types[i].innerHTML = `${types[i]}`
+                    }
+                    else if (types[i]=="psychic") {
+                        box_types[i].style.color = "white"
+                        box_types[i].style.backgroundColor = "#F366B9"
+                        box_types[i].innerHTML = `${types[i]}`
+                    }
+                    else if (types[i]=="rock") {
+                        box_types[i].style.color = "white"
+                        box_types[i].style.backgroundColor = "#8E4125"
+                        box_types[i].innerHTML = `${types[i]}`
+                    }
+                    else if (types[i]=="steel") {
+                        box_types[i].style.color = "black"
+                        box_types[i].style.backgroundColor = "#9EB7B8"
+                        box_types[i].innerHTML = `${types[i]}`
+                    }
+                    else if (types[i]=="water") {
+                        box_types[i].style.color = "white"
+                        box_types[i].style.backgroundColor = "#4592C4"
+                        box_types[i].innerHTML = `${types[i]}`
+                    }
+                }
                 let audioElement = new Audio(soundPokemon)
+                console.log(audioElement)
                 audioElement.play()
             })
     }
-    fetchPokemon()
 }
 
 //Onload Function
@@ -134,7 +247,6 @@ let min_values
 function openSettings() {
     activeMobileMenu()
     settings.style.display = "flex"
-    body.style.overflow = "hidden"
     pomodoro_min_last = pomodoro_min
     short_brk_min_last = short_brk_min
     long_brk_min_last = long_brk_min
@@ -148,7 +260,6 @@ function closeSettings() {
     else {
         clearInterval(min_values)
         settings.style.display = "none"
-        body.style.overflow = "visible"
         if (pomodoro_min != pomodoro_min_last || short_brk_min != short_brk_min_last || long_brk_min != long_brk_min_last) {
             if (pomodoro_option) {
                 timerPomodoro()

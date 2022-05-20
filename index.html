@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -136,12 +136,14 @@
         <div class="pokemon__window">
             <div class="pokemon__header">
                 <img id="close--pokemon-container" src="images/icons/remove-white-sm.svg" alt="">
+                <span id="pokemon--id"></span>
             </div>
             <div class="pokemon__image"></div>
             <div class="pokemon__info">
                 <h1 id="pokemon--name"></h1>
-                <span id="pokemon--id"></span>
-                <span id="pokemon--types"></span>
+                <div class="pokemon__types">
+                    <div class="pokemon--types"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -165,9 +167,6 @@
             </div>
         </div>
     </div>
-
-    <!--<audio src="./sound/rain.mp3" autoplay loop>-->
-
     <script src="js/main.js"></script>
 </body>
 </html>

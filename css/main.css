@@ -35,7 +35,7 @@ body {
     background-size: cover;
     height: 99vh;
     position: relative;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 a, li {
@@ -409,18 +409,16 @@ hr {
     min-width: 600px;
     min-height: 400px;
     background-color: var(--box-timer);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
 
 .pokemon__header {
-    align-self: baseline;
+    align-self: center;
     display: flex;
-    align-items: baseline;
-    justify-content: flex-start;
+    justify-content: space-between;
     margin: 30px 30px;
+    font-family: var(--font);
+    color: var(--color-font2);
+    text-transform: uppercase;
 }
 
 .pokemon__header > img {
@@ -431,10 +429,13 @@ hr {
 
 .pokemon__image {
     margin: 0px 0px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .pokemon__image > img {
-    width: 200px
+    width: 200px;
 }
 
 .pokemon__info {
@@ -452,10 +453,25 @@ hr {
 }
 
 #pokemon--id {
-    margin-top: 10px;
     font-size: 1.2em;
 }
 
+.pokemon__types {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+
+.pokemon--types {
+    margin: 0px 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 20px;
+    border-radius: 5px;
+    font-size: 1.1em;
+}
 /*============================= CONTAINER POMODORO =============================*/
 
 .container {
@@ -648,6 +664,15 @@ hr {
     #pokemon--id {
         margin: 10px 0px 10px;
         font-size: 1em;
+    }
+
+    .pokemon__types {
+        margin: 10px;
+    }
+    
+    .pokemon--types {
+        padding: 5px 15px;
+        font-size: 0.9em;
     }
 }
 
@@ -1020,6 +1045,16 @@ hr {
     #pokemon--id {
         margin: 10px 0px 10px;
         font-size: 0.9em;
+    }
+
+    .pokemon__types {
+        margin: 10px;
+    }
+    
+    .pokemon--types {
+        padding: 3px 10px;
+        font-size: 0.8em;
+        margin: 0px 5px 0px;
     }
 }
 
