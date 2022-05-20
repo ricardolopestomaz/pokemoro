@@ -415,7 +415,7 @@ hr {
     align-self: center;
     display: flex;
     justify-content: space-between;
-    margin: 30px 30px;
+    margin: 30px 30px 0px;
     font-family: var(--font);
     color: var(--color-font2);
     text-transform: uppercase;
