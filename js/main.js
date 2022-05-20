@@ -4,8 +4,9 @@ const legendary = [144,145,146,150,151,243,244,245,249,250,251,377,378,379,380,3
 
 // PULL POKEMON
 let id
+let box = document.createElement("div")
+let pokemon_types = document.querySelector(".pokemon__types")
 function pull(min) {
-    let box = document.createElement("div")
     id = Math.floor(Math.random() * (386)) + 1
     if(min <= 25) {
         if (rare.indexOf(id, 0)!= - 1 || legendary.indexOf(id, 0)!= - 1) {
@@ -52,7 +53,6 @@ function pull(min) {
                 <img id="pokemon--img" src="${img}" alt="Pokemon Image"/>`
                 document.querySelector("#pokemon--name").innerHTML = `${name}`
                 if (types.length==2) {
-                    let pokemon_types = document.querySelector(".pokemon__types")
                     box.setAttribute("class", "pokemon--types")
                     pokemon_types.appendChild(box)
                 }
@@ -592,6 +592,8 @@ function openPokebola() {
     close_container.addEventListener("click", closePoketainer => {
         running_timer = false
         pokemon_container.style.display = "none"
+        box.removeAttribute("class")
+        pokemon_types.removeChild(box)
         if (count_breaks < 4) {
             timerShortBrk()
             count_breaks++
