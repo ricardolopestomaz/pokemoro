@@ -1214,6 +1214,13 @@ hr {
 }
 
 /*============================= MEDIAS WIDTH =============================*/
+@media (max-height: 660px) {
+    .settings {
+        height: 100vh;
+        margin-top: 50px;
+    }
+}
+
 @media (max-height: 450px) {
     .container, .pokemon-container {
         height: 100vh;
@@ -1232,6 +1239,6 @@ hr {
     .settings {
         height: 100vh;
         margin-top: 50px;
-        margin-top: 60vh;
+        margin-top: 40vh;
     }
 }
