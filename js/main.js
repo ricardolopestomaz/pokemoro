@@ -115,7 +115,7 @@ function pull(min) {
                     }
                     else if (types[i]=="ice") {
                         box_types[i].style.color = "black"
-                        box_types[i].style.backgroundColor = "#B97FC9"
+                        box_types[i].style.backgroundColor = "#51C4E7"
                         box_types[i].innerHTML = `${types[i]}`
                     }
                     else if (types[i]=="normal") {
@@ -154,6 +154,7 @@ function pull(min) {
 }
 
 //Onload Function
+let clock_container = document.querySelector(".container")
 let body = document.body
 window.addEventListener("load", onLoad => {
     timerPomodoro()
@@ -243,19 +244,23 @@ let min_values
 function openSettings() {
     activeMobileMenu()
     settings.style.display = "flex"
+    clock_container.style.display = "none"
     pomodoro_min_last = pomodoro_min
     short_brk_min_last = short_brk_min
     long_brk_min_last = long_brk_min
     min_values = setInterval(receiveValues, 1)
+    if (!close_poketainer) {
+        pokemon_container.style.display = "none"
+    }
 }
 
 function closeSettings() {
-    if (pomodoro_min < 10 || pomodoro_min > 60 || short_brk_min < 1 || short_brk_min > 30 || long_brk_min < 15 || long_brk_min > 60 || repeat_value < 1 || repeat_value > 100) {
+    if (pomodoro_min < 1 || pomodoro_min > 60 || short_brk_min < 1 || short_brk_min > 30 || long_brk_min < 15 || long_brk_min > 60 || repeat_value < 1 || repeat_value > 100) {
         settings.style.display = "flex"
     }
     else {
-        clearInterval(min_values)
         settings.style.display = "none"
+        clearInterval(min_values)
         if (pomodoro_min != pomodoro_min_last || short_brk_min != short_brk_min_last || long_brk_min != long_brk_min_last) {
             if (pomodoro_option) {
                 timerPomodoro()
@@ -266,6 +271,12 @@ function closeSettings() {
             else if (long_brk_option) {
                 timerLongBrk()
             }
+        }
+        if (!close_poketainer) {
+            pokemon_container.style.display = "flex"
+        }
+        else {
+            clock_container.style.display = "flex"
         }
     }
 }
@@ -285,7 +296,7 @@ function receiveValues() {
     else {
         repeat_alert.style.display = "none"
     }
-    if (pomodoro_min < 10 || pomodoro_min > 60) {
+    if (pomodoro_min < 1 || pomodoro_min > 60) {
         pomodoro_alert.style.display = "flex"
     }
     else {
@@ -579,21 +590,29 @@ function runsTimer() {
     }
 }
 
+let close_poketainer = true
 let count_breaks = 0
+let pokemon_container = document.querySelector(".pokemon-container")
 function openPokebola() {
     clearInterval(rotate_pokebola)
     pull(pomodoro_min)
     btn_pokebola.removeEventListener("click", openPokebola)
     btn_pokebola.style.cursor = "default"
     btn_pokebola.style.transform = `rotate(0deg)`
-    let pokemon_container = document.querySelector(".pokemon-container")
     pokemon_container.style.display = "flex"
+    clock_container.style.display = "none"
+    close_poketainer = false
     let close_container = document.querySelector("#close--pokemon-container")
     close_container.addEventListener("click", closePoketainer => {
         running_timer = false
         pokemon_container.style.display = "none"
-        box.removeAttribute("class")
-        pokemon_types.removeChild(box)
+        clock_container.style.display = "flex"
+        close_poketainer = true
+        let box_types = document.querySelectorAll(".pokemon--types")
+        if (box_types.length == 2) {
+            box.removeAttribute("class")
+            pokemon_types.removeChild(box)
+        }
         if (count_breaks < 4) {
             timerShortBrk()
             count_breaks++

@@ -35,7 +35,6 @@ body {
     background-size: cover;
     height: 99vh;
     position: relative;
-    overflow: hidden;
 }
 
 a, li {
@@ -51,13 +50,13 @@ hr {
 }
 
 /*============================= HEADER & NAV =============================*/
-
 .header__menu {
     display: flex;
     justify-content: space-around;
     margin: 5px 0px;
     align-items: center;
     color: var(--color-font);
+    height: 10vh;
 }
 
 .menu__logo h1 {
@@ -399,7 +398,7 @@ hr {
     align-items: center;
     justify-content: center;
     z-index: 5;
-    height: 85vh;
+    height: 84vh;
     transition: 0.5s ease-in-out;
 }
 
@@ -563,8 +562,7 @@ hr {
     position: relative;
     z-index: 2;
 }
-
-/*============================= MEDIAS =============================*/
+/*============================= MEDIAS WIDTH =============================*/
 @media (max-width: 1400px) {
     .pomodoro {
         min-width: 500px;
@@ -987,6 +985,24 @@ hr {
 }
 
 @media (max-width: 480px) {
+    .menu__nav--opts {
+        top: 10vh;
+    }
+
+    .menu__links {
+        font-size: 0.8em;
+        padding: 4px 8px 4px 8px;
+        margin: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .menu__links > img {
+        max-width: 15px;
+        margin-right: 5px;
+    }
+
     .pomodoro {
         min-width: 100px;
         border-radius: 10px;
@@ -1194,5 +1210,28 @@ hr {
     .alarm__repeat--alert {
         top: 35px;
         left: -80px;
+    }
+}
+
+/*============================= MEDIAS WIDTH =============================*/
+@media (max-height: 450px) {
+    .container, .pokemon-container {
+        height: 100vh;
+        margin-top: 50px;
+    }
+    
+    .pokemon__window {
+        min-width: 500px;
+        min-height: 300px;
+    }
+    
+    .pokemon__header {
+        margin: 20px 20px 0px;
+    }
+
+    .settings {
+        height: 100vh;
+        margin-top: 50px;
+        margin-top: 60vh;
     }
 }
