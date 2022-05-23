@@ -4,7 +4,7 @@ const legendary = [144,145,146,150,151,243,244,245,249,250,251,377,378,379,380,3
 
 // PULL POKEMON
 let id
-let box = document.createElement("div")
+let box
 let pokemon_types = document.querySelector(".pokemon__types")
 function pull(min) {
     id = Math.floor(Math.random() * (386)) + 1
@@ -53,6 +53,7 @@ function pull(min) {
                 <img id="pokemon--img" src="${img}" alt="Pokemon Image"/>`
                 document.querySelector("#pokemon--name").innerHTML = `${name}`
                 if (types.length==2) {
+                    box = document.createElement("div")
                     box.setAttribute("class", "pokemon--types")
                     pokemon_types.appendChild(box)
                 }
