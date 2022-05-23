@@ -50,7 +50,7 @@ function pull(min) {
                 }
                 document.querySelector("#pokemon--id").innerHTML = `ID: ${id}`
                 document.querySelector(".pokemon__image").innerHTML = `
-                <img id="pokemon--img" src="${img}" alt="Pokemon Image"/> style="max-width: 300px; max-heigth: 300px;`
+                <img id="pokemon--img" src="${img}" alt="Pokemon Image"/>`
                 document.querySelector("#pokemon--name").innerHTML = `${name}`
                 if (types.length==2) {
                     box = document.createElement("div")
