@@ -350,7 +350,7 @@ pomodoro_format.addEventListener("click", autoPomodoro => {
     }
 })
 
-let three3d_active = false
+let three3d_active = true
 let format_3d = document.querySelector("#format__3d")
 format_3d.addEventListener("click", active3DPokemon => {
     let input_3d = document.querySelector("#input-3d")
