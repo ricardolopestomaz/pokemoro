@@ -297,7 +297,7 @@ function receiveValues() {
     else {
         repeat_alert.style.display = "none"
     }
-    if (pomodoro_min < 1 || pomodoro_min > 60) {
+    if (pomodoro_min < 10 || pomodoro_min > 60) {
         pomodoro_alert.style.display = "flex"
     }
     else {
@@ -350,7 +350,7 @@ pomodoro_format.addEventListener("click", autoPomodoro => {
     }
 })
 
-let three3d_active = true
+let three3d_active = false
 let format_3d = document.querySelector("#format__3d")
 format_3d.addEventListener("click", active3DPokemon => {
     let input_3d = document.querySelector("#input-3d")
@@ -437,6 +437,7 @@ function timerPomodoro() {
         min = pomodoro_min
         sec = 0
         clearInterval(rotate_pokebola)
+        btn_pokebola.setAttribute("src", "../images/icons/pokebola-comum.svg")
         btn_pokebola.removeEventListener("click", openPokebola)
         btn_pokebola.style.cursor = "default"
         btn_pokebola.style.transform = `rotate(0deg)`
@@ -471,6 +472,7 @@ function timerShortBrk() {
         min = short_brk_min
         sec = 0
         clearInterval(rotate_pokebola)
+        btn_pokebola.setAttribute("src", "../images/icons/pokebola-comum.svg")
         btn_pokebola.removeEventListener("click", openPokebola)
         btn_pokebola.style.cursor = "default"
         btn_pokebola.style.transform = `rotate(0deg)`
@@ -505,6 +507,7 @@ function timerLongBrk() {
         min = long_brk_min
         sec = 0
         clearInterval(rotate_pokebola)
+        btn_pokebola.setAttribute("src", "../images/icons/pokebola-comum.svg")
         btn_pokebola.removeEventListener("click", openPokebola)
         btn_pokebola.style.cursor = "default"
         btn_pokebola.style.transform = `rotate(0deg)`
@@ -575,9 +578,32 @@ function runsTimer() {
         running_timer = false
         if (pomodoro_option) {
             let posi = 0
+            let rigth = true
+            let count_rotate = 0
+            btn_pokebola.style.transition = "ease-in-out 0.01s"
             rotate_pokebola = setInterval(rotatePokebola => {
-                posi+=5
-                btn_pokebola.style.transform = `rotate(${posi}deg)`
+                if (rigth) {
+                    posi += 2
+                    if (posi>=45) {
+                        rigth = false
+                        count_rotate += 1
+                    }
+                }
+                else {
+                    posi -= 2
+                    if (posi<=-45) {
+                        rigth = true
+                        count_rotate += 1
+                    }
+                }
+                if (count_rotate>=3 && posi==0) {
+                    btn_pokebola.style.transform = `rotate(${posi}deg)`
+                    clearInterval(rotate_pokebola)
+                    btn_pokebola.setAttribute("src", "../images/icons/pokebola-active.png")
+                }
+                else {
+                    btn_pokebola.style.transform = `rotate(${posi}deg)`
+                }
             }, 10)
             btn_pokebola.addEventListener("click", openPokebola)
             btn_pokebola.style.cursor = "pointer"
@@ -596,6 +622,7 @@ let count_breaks = 0
 let pokemon_container = document.querySelector(".pokemon-container")
 function openPokebola() {
     clearInterval(rotate_pokebola)
+    btn_pokebola.setAttribute("src", "../images/icons/pokebola-comum.svg")
     pull(pomodoro_min)
     btn_pokebola.removeEventListener("click", openPokebola)
     btn_pokebola.style.cursor = "default"
