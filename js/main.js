@@ -599,7 +599,7 @@ function runsTimer() {
                 if (count_rotate>=3 && posi==0) {
                     btn_pokebola.style.transform = `rotate(${posi}deg)`
                     clearInterval(rotate_pokebola)
-                    btn_pokebola.setAttribute("src", "../images/icons/pokebola-active.png")
+                    btn_pokebola.setAttribute("src", "images/icons/pokebola-active.png")
                 }
                 else {
                     btn_pokebola.style.transform = `rotate(${posi}deg)`
