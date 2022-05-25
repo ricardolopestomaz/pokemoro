@@ -49,8 +49,7 @@ function pull(min) {
                     img = `https://professorlotus.com/Sprites/${name}.gif`
                 }
                 document.querySelector("#pokemon--id").innerHTML = `ID: ${id}`
-                document.querySelector(".pokemon__image").innerHTML = `
-                <img id="pokemon--img" src="${img}" alt="Pokemon Image"/>`
+                document.querySelector(".pokemon__image").innerHTML = `<img id="pokemon--img" src="${img}" alt="Pokemon Image"/>`
                 document.querySelector("#pokemon--name").innerHTML = `${name}`
                 if (types.length==2) {
                     box = document.createElement("div")
@@ -151,6 +150,7 @@ function pull(min) {
                     }
                 }
             })
+            pokemon_container.style.display = "flex"
     }
 }
 
@@ -627,7 +627,6 @@ function openPokebola() {
     btn_pokebola.removeEventListener("click", openPokebola)
     btn_pokebola.style.cursor = "default"
     btn_pokebola.style.transform = `rotate(0deg)`
-    pokemon_container.style.display = "flex"
     clock_container.style.display = "none"
     close_poketainer = false
     let close_container = document.querySelector("#close--pokemon-container")
@@ -636,6 +635,7 @@ function openPokebola() {
         pokemon_container.style.display = "none"
         clock_container.style.display = "flex"
         close_poketainer = true
+        document.querySelector(".pokemon__image").innerHTML = `<img id="pokemon--img" src="" alt="Pokemon Image"/>`
         let box_types = document.querySelectorAll(".pokemon--types")
         if (box_types.length == 2) {
             box.removeAttribute("class")
