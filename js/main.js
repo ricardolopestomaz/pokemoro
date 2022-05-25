@@ -437,7 +437,7 @@ function timerPomodoro() {
         min = pomodoro_min
         sec = 0
         clearInterval(rotate_pokebola)
-        btn_pokebola.setAttribute("src", "../images/icons/pokebola-comum.svg")
+        btn_pokebola.setAttribute("src", "images/icons/pokebola-comum.svg")
         btn_pokebola.removeEventListener("click", openPokebola)
         btn_pokebola.style.cursor = "default"
         btn_pokebola.style.transform = `rotate(0deg)`
@@ -472,7 +472,7 @@ function timerShortBrk() {
         min = short_brk_min
         sec = 0
         clearInterval(rotate_pokebola)
-        btn_pokebola.setAttribute("src", "../images/icons/pokebola-comum.svg")
+        btn_pokebola.setAttribute("src", "images/icons/pokebola-comum.svg")
         btn_pokebola.removeEventListener("click", openPokebola)
         btn_pokebola.style.cursor = "default"
         btn_pokebola.style.transform = `rotate(0deg)`
@@ -507,7 +507,7 @@ function timerLongBrk() {
         min = long_brk_min
         sec = 0
         clearInterval(rotate_pokebola)
-        btn_pokebola.setAttribute("src", "../images/icons/pokebola-comum.svg")
+        btn_pokebola.setAttribute("src", "images/icons/pokebola-comum.svg")
         btn_pokebola.removeEventListener("click", openPokebola)
         btn_pokebola.style.cursor = "default"
         btn_pokebola.style.transform = `rotate(0deg)`
