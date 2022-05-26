@@ -49,7 +49,7 @@ function pull(min) {
                     img = `https://professorlotus.com/Sprites/${name}.gif`
                 }
                 document.querySelector("#pokemon--id").innerHTML = `ID: ${id}`
-                document.querySelector(".pokemon__image").innerHTML = `<img id="pokemon--img" src="${img}" alt="Pokemon Image"/>`
+                document.querySelector(".pokemon__image").innerHTML = `<img id="pokemon--img" src="${img}"/>`
                 document.querySelector("#pokemon--name").innerHTML = `${name}`
                 if (types.length==2) {
                     box = document.createElement("div")
@@ -578,32 +578,9 @@ function runsTimer() {
         running_timer = false
         if (pomodoro_option) {
             let posi = 0
-            let rigth = true
-            let count_rotate = 0
-            btn_pokebola.style.transition = "ease-in-out 0.01s"
             rotate_pokebola = setInterval(rotatePokebola => {
-                if (rigth) {
-                    posi += 2
-                    if (posi>=45) {
-                        rigth = false
-                        count_rotate += 1
-                    }
-                }
-                else {
-                    posi -= 2
-                    if (posi<=-45) {
-                        rigth = true
-                        count_rotate += 1
-                    }
-                }
-                if (count_rotate>=3 && posi==0) {
-                    btn_pokebola.style.transform = `rotate(${posi}deg)`
-                    clearInterval(rotate_pokebola)
-                    btn_pokebola.setAttribute("src", "images/icons/pokebola-active.png")
-                }
-                else {
-                    btn_pokebola.style.transform = `rotate(${posi}deg)`
-                }
+                posi += 2
+                btn_pokebola.style.transform = `rotate(${posi}deg)`
             }, 10)
             btn_pokebola.addEventListener("click", openPokebola)
             btn_pokebola.style.cursor = "pointer"
@@ -635,7 +612,7 @@ function openPokebola() {
         pokemon_container.style.display = "none"
         clock_container.style.display = "flex"
         close_poketainer = true
-        document.querySelector(".pokemon__image").innerHTML = `<img id="pokemon--img" src="" alt="Pokemon Image"/>`
+        document.querySelector(".pokemon__image").innerHTML = `<img id="pokemon--img" src=""/>`
         let box_types = document.querySelectorAll(".pokemon--types")
         if (box_types.length == 2) {
             box.removeAttribute("class")
@@ -654,4 +631,3 @@ function openPokebola() {
         }
     })
 }
-openPokebola()
