@@ -60,22 +60,22 @@ function pull(min) {
                 for (let i=0; i<types.length; i++) {
                     if (types[i]=="electric") {
                         box_types[i].style.color = "black"
-                        box_types[i].style.backgroundColor = "#EED535"
+                        box_types[i].style.background = "#EED535"
                         box_types[i].innerHTML = `${types[i]}`
                     }
                     else if (types[i]=="grass") {
                         box_types[i].style.color = "black"
-                        box_types[i].style.backgroundColor = "#729F3F"
+                        box_types[i].style.background = "#9BCC50"
                         box_types[i].innerHTML = `${types[i]}`
                     }
                     else if (types[i]=="bug") {
                         box_types[i].style.color = "white"
-                        box_types[i].style.backgroundColor = "#729F3F"
+                        box_types[i].style.background = "#729F3F"
                         box_types[i].innerHTML = `${types[i]}`
                     }
                     else if (types[i]=="dark") {
                         box_types[i].style.color = "white"
-                        box_types[i].style.backgroundColor = "#585978"
+                        box_types[i].style.background = "#585978"
                         box_types[i].innerHTML = `${types[i]}`
                     }
                     else if (types[i]=="dragon") {
@@ -85,17 +85,17 @@ function pull(min) {
                     }
                     else if (types[i]=="fairy") {
                         box_types[i].style.color = "black"
-                        box_types[i].style.backgroundColor = "#FDB9E9"
+                        box_types[i].style.background = "#FDB9E9"
                         box_types[i].innerHTML = `${types[i]}`
                     }
                     else if (types[i]=="fighting") {
                         box_types[i].style.color = "white"
-                        box_types[i].style.backgroundColor = "#E3612F"
+                        box_types[i].style.background = "#E3612F"
                         box_types[i].innerHTML = `${types[i]}`
                     }
                     else if (types[i]=="fire") {
                         box_types[i].style.color = "white"
-                        box_types[i].style.backgroundColor = "#FD7D24"
+                        box_types[i].style.background = "#FD7D24"
                         box_types[i].innerHTML = `${types[i]}`
                     }
                     else if (types[i]=="flying") {
@@ -105,7 +105,7 @@ function pull(min) {
                     }
                     else if (types[i]=="ghost") {
                         box_types[i].style.color = "white"
-                        box_types[i].style.backgroundColor = "#946994"
+                        box_types[i].style.background = "#946994"
                         box_types[i].innerHTML = `${types[i]}`
                     }
                     else if (types[i]=="ground") {
@@ -115,37 +115,37 @@ function pull(min) {
                     }
                     else if (types[i]=="ice") {
                         box_types[i].style.color = "black"
-                        box_types[i].style.backgroundColor = "#51C4E7"
+                        box_types[i].style.background = "#51C4E7"
                         box_types[i].innerHTML = `${types[i]}`
                     }
                     else if (types[i]=="normal") {
                         box_types[i].style.color = "black"
-                        box_types[i].style.backgroundColor = "#A4ACAF"
+                        box_types[i].style.background = "#A4ACAF"
                         box_types[i].innerHTML = `${types[i]}`
                     }
                     else if (types[i]=="poison") {
                         box_types[i].style.color = "white"
-                        box_types[i].style.backgroundColor = "#9867E4"
+                        box_types[i].style.background = "#9867E4"
                         box_types[i].innerHTML = `${types[i]}`
                     }
                     else if (types[i]=="psychic") {
                         box_types[i].style.color = "white"
-                        box_types[i].style.backgroundColor = "#F366B9"
+                        box_types[i].style.background = "#F366B9"
                         box_types[i].innerHTML = `${types[i]}`
                     }
                     else if (types[i]=="rock") {
                         box_types[i].style.color = "white"
-                        box_types[i].style.backgroundColor = "#8E4125"
+                        box_types[i].style.background = "#8E4125"
                         box_types[i].innerHTML = `${types[i]}`
                     }
                     else if (types[i]=="steel") {
                         box_types[i].style.color = "black"
-                        box_types[i].style.backgroundColor = "#9EB7B8"
+                        box_types[i].style.background = "#9EB7B8"
                         box_types[i].innerHTML = `${types[i]}`
                     }
                     else if (types[i]=="water") {
                         box_types[i].style.color = "white"
-                        box_types[i].style.backgroundColor = "#4592C4"
+                        box_types[i].style.background = "#4592C4"
                         box_types[i].innerHTML = `${types[i]}`
                     }
                 }
@@ -297,7 +297,7 @@ function receiveValues() {
     else {
         repeat_alert.style.display = "none"
     }
-    if (pomodoro_min < 10 || pomodoro_min > 60) {
+    if (pomodoro_min < 1 || pomodoro_min > 60) {
         pomodoro_alert.style.display = "flex"
     }
     else {
@@ -437,7 +437,6 @@ function timerPomodoro() {
         min = pomodoro_min
         sec = 0
         clearInterval(rotate_pokebola)
-        btn_pokebola.setAttribute("src", "images/icons/pokebola-comum.svg")
         btn_pokebola.removeEventListener("click", openPokebola)
         btn_pokebola.style.cursor = "default"
         btn_pokebola.style.transform = `rotate(0deg)`
@@ -472,7 +471,6 @@ function timerShortBrk() {
         min = short_brk_min
         sec = 0
         clearInterval(rotate_pokebola)
-        btn_pokebola.setAttribute("src", "images/icons/pokebola-comum.svg")
         btn_pokebola.removeEventListener("click", openPokebola)
         btn_pokebola.style.cursor = "default"
         btn_pokebola.style.transform = `rotate(0deg)`
@@ -507,7 +505,6 @@ function timerLongBrk() {
         min = long_brk_min
         sec = 0
         clearInterval(rotate_pokebola)
-        btn_pokebola.setAttribute("src", "images/icons/pokebola-comum.svg")
         btn_pokebola.removeEventListener("click", openPokebola)
         btn_pokebola.style.cursor = "default"
         btn_pokebola.style.transform = `rotate(0deg)`
@@ -530,6 +527,7 @@ let sec = 0
 let sec_string
 let min_string
 let running_timer = false
+let rotate = false
 
 let btn_pokebola = document.querySelector("#pokebola--icon")
 let rotate_pokebola
@@ -564,33 +562,37 @@ function pomodoroStop() {
 }
 
 function runsTimer() {
-    if (sec==0) {
-        sec = 60
-    }
-    if (sec==60) {
-        min--
-    }
-    sec--
-    clockTimer(min)
-
     if (min==0 && sec==0) {
         clearInterval(timer)
-        running_timer = false
         if (pomodoro_option) {
-            let posi = 0
-            rotate_pokebola = setInterval(rotatePokebola => {
-                posi += 2
-                btn_pokebola.style.transform = `rotate(${posi}deg)`
-            }, 10)
-            btn_pokebola.addEventListener("click", openPokebola)
-            btn_pokebola.style.cursor = "pointer"
+            if (!rotate) {
+                let posi = 0
+                rotate = true
+                rotate_pokebola = setInterval(rotatePokebola => {
+                    posi += 2
+                    btn_pokebola.style.transform = `rotate(${posi}deg)`
+                }, 10)
+                btn_pokebola.addEventListener("click", openPokebola)
+                btn_pokebola.style.cursor = "pointer"
+            }
         }
         else {
+            running_timer = false
             timerPomodoro()
             if (pomodoro_active) {
                 pomodoroStart()
             }
         }
+    }
+    else {
+        if (sec==0) {
+            sec = 60
+        }
+        if (sec==60) {
+            min--
+        }
+        sec--
+        clockTimer(min)
     }
 }
 
@@ -598,9 +600,9 @@ let close_poketainer = true
 let count_breaks = 0
 let pokemon_container = document.querySelector(".pokemon-container")
 function openPokebola() {
-    clearInterval(rotate_pokebola)
-    btn_pokebola.setAttribute("src", "../images/icons/pokebola-comum.svg")
     pull(pomodoro_min)
+    rotate = false
+    clearInterval(rotate_pokebola)
     btn_pokebola.removeEventListener("click", openPokebola)
     btn_pokebola.style.cursor = "default"
     btn_pokebola.style.transform = `rotate(0deg)`
