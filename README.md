@@ -6,7 +6,6 @@
 > Os desenvolvedores foram:
  - Arthur Henrique Pestana Schneider; github: arthurpestana
  - Heitor Fiuza Oliveira; github: HeitorFiuza
- - Marcos Ribeiro Guida; github: marcosguida
  - Ricardo Lopes Tomaz; github: ricardolopestomaz
 
 ### ​Ajustes e melhorias 
