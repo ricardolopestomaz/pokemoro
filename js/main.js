@@ -7,7 +7,7 @@ let id
 let box
 let pokemon_types = document.querySelector(".pokemon__types")
 function pull(min) {//id 386
-    id = Math.floor(Math.random() * (1)) + 1
+    id = Math.floor(Math.random() * (2)) + 1
     if(min <= 25) {
         if (rare.indexOf(id, 0)!= - 1 || legendary.indexOf(id, 0)!= - 1) {
             pull(min)
@@ -35,7 +35,7 @@ function pull(min) {//id 386
                 const types = pokemon.types.map(typeInfo => typeInfo.type.name)
                 let name = pokemon.name
                 let img
-                let soundPokemon = `../cries/${id}.mp3`
+                let soundPokemon = `http://voicepoke.xp3.biz/${id}.wav`
                 if (!three3d_active) {
                     if (id<=9) {
                         id = `00${id}`
