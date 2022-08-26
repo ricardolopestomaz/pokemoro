@@ -6,8 +6,8 @@ const legendary = [144,145,146,150,151,243,244,245,249,250,251,377,378,379,380,3
 let id
 let box
 let pokemon_types = document.querySelector(".pokemon__types")
-function pull(min) {
-    id = Math.floor(Math.random() * (386)) + 1
+function pull(min) {//id 386
+    id = Math.floor(Math.random() * (1)) + 1
     if(min <= 25) {
         if (rare.indexOf(id, 0)!= - 1 || legendary.indexOf(id, 0)!= - 1) {
             pull(min)
@@ -35,7 +35,7 @@ function pull(min) {
                 const types = pokemon.types.map(typeInfo => typeInfo.type.name)
                 let name = pokemon.name
                 let img
-                let soundPokemon = `../cries/${id}.wav`
+                let soundPokemon = `../cries/${id}.mp3`
                 if (!three3d_active) {
                     if (id<=9) {
                         id = `00${id}`
