@@ -568,8 +568,8 @@ function runsTimer() {
         clearInterval(timer)
         if (pomodoro_option) {
             //Notifica que o tempo acabou
-            If(window.Notification&&Notification.permission!=='denied'){
-                let timealert = New Notification('Você encontro um Pokémon!!!', {
+            if(window.Notification&&Notification.permission!=='denied') {
+                let timealert = new Notification('Você encontro um Pokémon!!!', {
                     body: 'Abra a pokébola',
                     icon: '../images/icons/pokebola.png'
                 })
