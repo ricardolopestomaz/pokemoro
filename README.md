@@ -15,6 +15,7 @@ O projeto ainda está em desenvolvimento e as próximas atualizações�
  - [x] Design e Implementações
  - [x] Funções JavaScript e derivados
  - [ ] Alarmes e musicas
- - [ ] Conexão com um Banco de Dados
+ - [x] Conexão com um Banco de Dados
  - [ ] Desenvolvimento de opções dinâmicas com PHP
- - [ ] Criar a pokedex e cadastramento dos usuários
+ - [ ] Criar a pokedex
+ - [x] Cadastramento dos usuários
