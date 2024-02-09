@@ -5,7 +5,6 @@
 > Este é um projeto de desenvolvimento web entre um grupo de amigos do Instituto Federal do Tocantins. O site tem como objetivo incentivar a prática da técnica do Pomodoro, um método de foco e repouso pré-definidos, para ajudar nos estudos ou em outras atividades do usuário.
 > Os desenvolvedores foram:
  - Arthur Henrique Pestana Schneider; github: arthurpestana
- - Heitor Fiuza Oliveira; github: HeitorFiuza
  - Ricardo Lopes Tomaz; github: ricardolopestomaz
 
 ### ​Ajustes e melhorias 
