@@ -6,10 +6,15 @@
 
 Bem-vindo ao Pokémoro, uma iniciativa inovadora desenvolvida por um entusiasmado grupo de amigos do Instituto Federal do Tocantins. Este projeto web foi concebido com a missão principal de fomentar a adoção da técnica Pomodoro, um método com ciclos de concentração e intervalos predefinidos, para potencializar a produtividade dos usuários em seus estudos e demais atividades.
 
-## Objetivo Principal
+## Fotos
 <p align="center">
   <img src="https://i.postimg.cc/pdF499jT/Captura-de-tela-de-2024-04-07-13-29-22.png">
 </p>
+<p align="center">
+  <img src="https://i.postimg.cc/8c4hPVm4/Captura-de-tela-de-2024-04-07-13-37-38.png">
+</p>
+
+## Objetivo Principal
 
 O propósito central do Pokémoro é criar um ambiente envolvente e motivador, inspirado na famosa técnica Pomodoro, para impulsionar a eficácia nos estudos e nas tarefas diárias. Ao combinar a disciplina do Pomodoro com a empolgação de capturar Pokémon, o Pokémoro busca tornar o processo de concentração mais lúdico e gratificante.
 
